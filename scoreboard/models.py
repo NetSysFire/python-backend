@@ -121,7 +121,8 @@ class GameManager(models.Manager):
         try:
             player = Player.objects.get(name=xlog_dict['name'])
         except Player.DoesNotExist:
-            player = Player.objects.create(name=xlog_dict['name'])
+            player = Player(name=xlog_dict['name'], clan=None, clan_admin=False)
+            player.save()
         kwargs['player'] = player
 
         game = self.create(**kwargs)

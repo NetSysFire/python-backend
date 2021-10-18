@@ -98,8 +98,9 @@ $ python manage.py loaddata achievements conducts sources trophies
 ```
 
 ### Running and operation
-The pollxlogs command will read xlog data from the sources defined as fixtures and
-imported above. The aggregate command will loop over all games and compute various
+The pollxlogs command will read xlog data from a list of sources with associated URLs,
+saved in the DB. Those sources were defined as fixtures and imported with the above
+loaddata command. The aggregate command will loop over all games and compute various
 aggregate data for individual players and for clans standings.
 ```shell
 $ ./manage.py pollxlogs
