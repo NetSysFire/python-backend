@@ -48,6 +48,7 @@ class LeaderboardBaseFields(models.Model):
     longest_streak         = models.IntegerField(default=0)
     unique_deaths          = models.IntegerField(default=0)
     unique_ascs            = models.IntegerField(default=0)
+    unique_achievements    = models.IntegerField(default=0)
     lowest_turncount_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     fastest_realtime_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     max_conducts_asc       = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')

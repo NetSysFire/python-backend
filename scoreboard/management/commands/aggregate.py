@@ -40,3 +40,12 @@ class Command(BaseCommand):
             update_leaderboard_fields(game.player, game)
             if game.player.clan is not None:
                 update_leaderboard_fields(game.player.clan, game)
+
+        players_annotated = Player.objects.annotate(nachieve=Count('game__achievements__id', distinct=True))
+        for player in players_annotated:
+            player.unique_achievements = player.nachieve
+            player.save()
+            if player.clan is not None:
+                if player.clan.unique_achievements < player.unique_achievements:
+                    clan.unique_achievements = player.unique_achievements
+                    clan.save()
