@@ -7,7 +7,10 @@ class Command(BaseCommand):
     help = 'Poll Sources (xlogfiles) for new game data'
 
     def handle(self, *args, **options):
-        for src in Source.objects.all():
+        sources = Source.objects.all()
+        if len(sources) == 0:
+            raise RuntimeError('There are no sources in the database to poll!')
+        for src in sources:
             print('polling source: ' + src.server)
 
             # TODO: save fpos and only fetch latest data, also save local copy of xlog file
