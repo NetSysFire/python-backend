@@ -317,7 +317,7 @@ def aggregateClanData():
         # For clans, we have to remove all trophies before re-awarding them.
         # This is because a member who provided some of the effort towards a
         # trophy may have left since the last aggregation.
-        clan.trophies.all().remove()
+        clan.trophies.remove()
         awardTrophies(clan, gamesby_clan)
 
 class Command(BaseCommand):
