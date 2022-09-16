@@ -28,6 +28,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['tnnt.org']
 
 
 # Application definition
@@ -64,6 +65,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Required when using Django version 4.x
+CSRF_TRUSTED_ORIGINS = []
+# CSRF_TRUSTED_ORIGINS = ['https://tnnt.org']
 
 ROOT_URLCONF = 'tnnt.urls'
 
@@ -170,6 +175,7 @@ AUTHENTICATION_BACKENDS = [
 # Path to dgl sqlite3 database
 
 DGL_DATABASE_PATH = './dgamelaunch_test.db'
+# DGL_DATABASE_PATH = '/opt/nethack/chroot/dgldir/dgamelaunch.db'
 
 # Clan size limit
 
@@ -177,12 +183,12 @@ MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
 
-CLAN_FREEZE_TIME = datetime.fromisoformat('2021-11-10T00:00:00+00:00')
+CLAN_FREEZE_TIME = datetime.fromisoformat('2022-11-10T00:00:00+00:00')
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2021-11-01T00:00:00+00:00')
-TOURNAMENT_END   = datetime.fromisoformat('2021-12-01T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2022-11-01T00:00:00+00:00')
+TOURNAMENT_END   = datetime.fromisoformat('2022-12-01T00:00:00+00:00')
 
 # Main log file
 
