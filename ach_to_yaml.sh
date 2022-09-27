@@ -4,21 +4,24 @@
 # fields/bits in a scoreboard-ready format (one that can be passed to manage.py
 # loaddata).
 
-if [ -z $1 ]; then
-  echo "Usage: script /path/to/tnnt [ > achievements.yaml ]"
+if [ -z "$1" ]; then
+  echo "Usage: script /path/to/tnnt [ > achievements.yaml ]" >&2
   exit 1
 fi
 
-if [ ! -e $1 ]; then
+if [ ! -d "$1" ]; then
   echo That path does not exist.
+  exit 1
 fi
 
-if [ ! -e ach_to_yaml.awk ]; then
-  echo Requires ach_to_yaml.awk to function.
+if [ ! -f "$1/util/tnnt_ach_to_yaml.c" ]; then
+  echo Requires util/tnnt_ach_to_yaml.c in TNNT repo to function. >&2
+  exit 1
 fi
 
-if [ ! -e vanilla_achievements.yaml ]; then
-  echo Requires vanilla_achievements.yaml to function.
+if [ ! -f vanilla_achievements.yaml ]; then
+  echo Requires vanilla_achievements.yaml to function. >&2
+  exit 1
 fi
 
 # vanilla_achievements.yaml is a MANUALLY maintained file of achievements
@@ -27,16 +30,11 @@ fi
 # pulling them from the game.
 cat vanilla_achievements.yaml
 
-# Grab the achievements array and chop off the end lines which aren't the
-# achievement names
-# First line: grab the relevant part of decl.c and chop off the start and end
-# lines which aren't actually data values.
-# Second line: exclude lines (e.g. comments) which aren't describing achievements.
-# Third line: strip C syntax and transform into tab-separated strings.
-# Fourth line: apply awk script to turn it into YAML.
-sed -n '/tnnt_achievements\[/,/^};$/ p' $1/src/decl.c | head -n -1 | tail -n +2 \
-    | sed -e '/^ *[^ {]/ d' \
-          -e 's/^ *{//' -e 's/", \?/"\t/' -e 's/\([^\]\)"/\1/g' -e 's/^"//' -e 's/\}.*//' \
-    | awk -F'\t' -f ach_to_yaml.awk
-
-# post 2021 TODO: This does not work on Hardfought.
+# tnnt_achivements.yaml is build dynamically by a utility script, based on the
+# contents of tnnt_achivements.h.
+if cd "$1/util" && make --silent tnnt_achievements.yaml; then
+  cat tnnt_achievements.yaml
+else
+  echo Error building tnnt_achievements.yaml. >&2
+  exit 1
+fi
