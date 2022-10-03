@@ -31,7 +31,7 @@ class Conduct(models.Model):
 class Achievement(models.Model):
     # The "perma-achievement" structure. Loaded from config.
     name        = models.CharField(max_length=128)
-    description = models.CharField(max_length=128)
+    description = models.CharField(max_length=256)
     # post 2021 TODO: possibly an int primary key or string id for this, so it
     # can be shown with the achievement and matches the one shown in-game
 
