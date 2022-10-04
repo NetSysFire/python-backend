@@ -215,6 +215,10 @@ div.achieve-top table tbody tr:last-child {
   color: #fd0;
 }
 
+#achievements-table td {
+  max-width: 32em;
+}
+
 /* style for the attained achievements */
 
 .achieved {
