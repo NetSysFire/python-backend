@@ -1094,793 +1094,811 @@
     bit: 42
 - model: scoreboard.achievement
   fields:
+    name: "The Last Chance Outpost"
+    description: "Visit a shop at or below level 20"
+    xlogfield: "tnntachieve2"
+    bit: 43
+- model: scoreboard.achievement
+  fields:
     name: "Money Talks"
     description: "Bribe a demon lord with at least 25000 gold"
     xlogfield: "tnntachieve2"
-    bit: 43
+    bit: 44
 - model: scoreboard.achievement
   fields:
     name: "The Negotiator"
     description: "Successfully bribe a demon lord with 1 zorkmid"
     xlogfield: "tnntachieve2"
-    bit: 44
+    bit: 45
 - model: scoreboard.achievement
   fields:
     name: "Look the Other Way"
     description: "Successfully bribe a mercenary"
     xlogfield: "tnntachieve2"
-    bit: 45
+    bit: 46
 - model: scoreboard.achievement
   fields:
     name: "A Little Light Larceny"
     description: "Get robbed by a nymph"
     xlogfield: "tnntachieve2"
-    bit: 46
+    bit: 47
 - model: scoreboard.achievement
   fields:
     name: "Pot of Greed"
     description: "Have your purse lightened by a leprechaun"
     xlogfield: "tnntachieve2"
-    bit: 47
+    bit: 48
 - model: scoreboard.achievement
   fields:
     name: "The Birds and the Bees"
     description: "Dally with a foocubus"
     xlogfield: "tnntachieve2"
-    bit: 48
+    bit: 49
 - model: scoreboard.achievement
   fields:
     name: "Hello, Nurse!"
     description: "Get a nurse to heal you or raise your max HP"
     xlogfield: "tnntachieve2"
-    bit: 49
+    bit: 50
 - model: scoreboard.achievement
   fields:
     name: "Tin Foil Hat"
     description: "Dodge a brainsucking attack"
     xlogfield: "tnntachieve2"
-    bit: 50
+    bit: 51
 - model: scoreboard.achievement
   fields:
     name: "Who You Gonna Call?"
     description: "Get scared by a ghost"
     xlogfield: "tnntachieve2"
-    bit: 51
+    bit: 52
 - model: scoreboard.achievement
   fields:
     name: "Heisenberg"
     description: "Become uncertain about your position or velocity"
     xlogfield: "tnntachieve2"
-    bit: 52
+    bit: 53
 - model: scoreboard.achievement
   fields:
     name: "Yoink!"
     description: "Have the Amulet of Yendor stolen from you"
     xlogfield: "tnntachieve2"
-    bit: 53
+    bit: 54
 - model: scoreboard.achievement
   fields:
     name: "Indulgences"
     description: "Buy protection from a priest"
     xlogfield: "tnntachieve2"
-    bit: 54
+    bit: 55
 - model: scoreboard.achievement
   fields:
     name: "Orthodoxy"
     description: "Convert an altar"
     xlogfield: "tnntachieve2"
-    bit: 55
+    bit: 56
 - model: scoreboard.achievement
   fields:
     name: "Potions of Booze Cost More Than That"
     description: "Get two bits for an ale from a priest"
     xlogfield: "tnntachieve2"
-    bit: 56
+    bit: 57
 - model: scoreboard.achievement
   fields:
     name: "Fumata Bianca"
     description: "Get a priest to grow up into a high priest"
     xlogfield: "tnntachieve2"
-    bit: 57
+    bit: 58
 - model: scoreboard.achievement
   fields:
     name: "Get Flashed"
     description: "Learn an item's BUC status from an altar"
     xlogfield: "tnntachieve2"
-    bit: 58
+    bit: 59
 - model: scoreboard.achievement
   fields:
     name: "The Royal Treatment"
     description: "Sit on a throne"
     xlogfield: "tnntachieve2"
-    bit: 59
+    bit: 60
 - model: scoreboard.achievement
   fields:
     name: "It'll Turn Up Later"
     description: "Drop a ring in a sink"
     xlogfield: "tnntachieve2"
-    bit: 60
+    bit: 61
 - model: scoreboard.achievement
   fields:
     name: "Isaac Newton"
     description: "Get fruit by kicking a tree"
     xlogfield: "tnntachieve2"
-    bit: 61
+    bit: 62
 - model: scoreboard.achievement
   fields:
     name: "Not The Bees"
     description: "Get bees by kicking a tree"
     xlogfield: "tnntachieve2"
-    bit: 62
+    bit: 63
 - model: scoreboard.achievement
   fields:
     name: "Wash it Clean"
     description: "Uncurse an item in a fountain"
-    xlogfield: "tnntachieve2"
-    bit: 63
+    xlogfield: "tnntachieve3"
+    bit: 0
 - model: scoreboard.achievement
   fields:
     name: "Well-Read"
     description: "Learn a level 5+ spell"
     xlogfield: "tnntachieve3"
-    bit: 0
+    bit: 1
 - model: scoreboard.achievement
   fields:
     name: "Hand Crafted"
     description: "Make a dragon scale mail"
     xlogfield: "tnntachieve3"
-    bit: 1
+    bit: 2
 - model: scoreboard.achievement
   fields:
     name: "The Most Dangerous Game"
     description: "Catch a monster in a trap set by you"
     xlogfield: "tnntachieve3"
-    bit: 2
+    bit: 3
+- model: scoreboard.achievement
+  fields:
+    name: "Foobear"
+    description: "Catch a bearish monster in a bear trap you set"
+    xlogfield: "tnntachieve3"
+    bit: 4
 - model: scoreboard.achievement
   fields:
     name: "Liberated"
     description: "Get yourself unpunished"
     xlogfield: "tnntachieve3"
-    bit: 3
+    bit: 5
 - model: scoreboard.achievement
   fields:
     name: "It's Called That For a Reason"
     description: "Come to earth by levitating over a sink"
     xlogfield: "tnntachieve3"
-    bit: 4
+    bit: 6
 - model: scoreboard.achievement
   fields:
     name: "Scribe"
     description: "Write a scroll with a magic marker"
     xlogfield: "tnntachieve3"
-    bit: 5
+    bit: 7
 - model: scoreboard.achievement
   fields:
     name: "First Edition"
     description: "Write a spellbook"
     xlogfield: "tnntachieve3"
-    bit: 6
+    bit: 8
 - model: scoreboard.achievement
   fields:
     name: "Dragon Rider"
     description: "Ride a dragon"
     xlogfield: "tnntachieve3"
-    bit: 7
+    bit: 9
 - model: scoreboard.achievement
   fields:
     name: "Shimmer"
     description: "Erosionproof an item"
     xlogfield: "tnntachieve3"
-    bit: 8
+    bit: 10
 - model: scoreboard.achievement
   fields:
     name: "They Like Shiny Things"
     description: "Throw a gem at a unicorn"
     xlogfield: "tnntachieve3"
-    bit: 9
+    bit: 11
 - model: scoreboard.achievement
   fields:
     name: "Buried Treasure"
     description: "Dig up a grave not in a graveyard"
     xlogfield: "tnntachieve3"
-    bit: 10
+    bit: 12
 - model: scoreboard.achievement
   fields:
     name: "Movers and Shakers"
     description: "Cause an earthquake"
     xlogfield: "tnntachieve3"
-    bit: 11
+    bit: 13
 - model: scoreboard.achievement
   fields:
     name: "Snake Charmer"
     description: "Pacify a snake with a flute"
     xlogfield: "tnntachieve3"
-    bit: 12
+    bit: 14
 - model: scoreboard.achievement
   fields:
     name: "Right Back at Ya"
     description: "Hit an enemy with an indirect strike from a thrown boomerang"
     xlogfield: "tnntachieve3"
-    bit: 13
+    bit: 15
 - model: scoreboard.achievement
   fields:
     name: "It Burnsss"
     description: "Deal silver damage to a silver-hating monster"
     xlogfield: "tnntachieve3"
-    bit: 14
+    bit: 16
 - model: scoreboard.achievement
   fields:
     name: "Arrakis"
     description: "Make a crysknife"
     xlogfield: "tnntachieve3"
-    bit: 15
+    bit: 17
 - model: scoreboard.achievement
   fields:
     name: "Obligatory Pointy Hat"
     description: "Put on a cornuthaum as a wizard"
     xlogfield: "tnntachieve3"
-    bit: 16
+    bit: 18
 - model: scoreboard.achievement
   fields:
     name: "Hobbit Skin"
     description: "Wear a mithril coat"
     xlogfield: "tnntachieve3"
-    bit: 17
+    bit: 19
 - model: scoreboard.achievement
   fields:
     name: "The Words of the Prophets"
     description: "Read 3 random graffiti"
     xlogfield: "tnntachieve3"
-    bit: 18
+    bit: 20
 - model: scoreboard.achievement
   fields:
     name: "Are You Still Pudding Farming"
     description: "Split a pudding"
     xlogfield: "tnntachieve3"
-    bit: 19
+    bit: 21
 - model: scoreboard.achievement
   fields:
     name: "Wearable Snack"
     description: "Wear a meat ring"
     xlogfield: "tnntachieve3"
-    bit: 20
+    bit: 22
 - model: scoreboard.achievement
   fields:
     name: "Frozen Treats"
     description: "Loot an ice box"
     xlogfield: "tnntachieve3"
-    bit: 21
+    bit: 23
 - model: scoreboard.achievement
   fields:
     name: "Six Pack"
     description: "Stock an ice box with 6 or more potions of booze"
     xlogfield: "tnntachieve3"
-    bit: 22
+    bit: 24
 - model: scoreboard.achievement
   fields:
     name: "Pygmalion"
     description: "Create a monster from a figurine"
     xlogfield: "tnntachieve3"
-    bit: 23
+    bit: 25
 - model: scoreboard.achievement
   fields:
     name: "Nerd"
     description: "Read a spellbook while wearing lenses and a T-shirt"
     xlogfield: "tnntachieve3"
-    bit: 24
+    bit: 26
 - model: scoreboard.achievement
   fields:
     name: "Recharged"
     description: "Charge an object"
     xlogfield: "tnntachieve3"
-    bit: 25
+    bit: 27
 - model: scoreboard.achievement
   fields:
     name: "Get Your Kicks"
     description: "Kick an item embedded in a wall or rock"
     xlogfield: "tnntachieve3"
-    bit: 26
+    bit: 28
 - model: scoreboard.achievement
   fields:
     name: "Spiderman"
     description: "Grab an item with a grappling hook"
     xlogfield: "tnntachieve3"
-    bit: 27
+    bit: 29
 - model: scoreboard.achievement
   fields:
     name: "More Light"
     description: "Refill the Candelabrum after it burns out after the Invocation"
     xlogfield: "tnntachieve3"
-    bit: 28
+    bit: 30
 - model: scoreboard.achievement
   fields:
     name: "Fill 'Er Up"
     description: "Fill an oil lamp with a potion of oil"
     xlogfield: "tnntachieve3"
-    bit: 29
+    bit: 31
 - model: scoreboard.achievement
   fields:
     name: "Chemistry 101"
     description: "Alchemize two potions in an established recipe"
     xlogfield: "tnntachieve3"
-    bit: 30
+    bit: 32
 - model: scoreboard.achievement
   fields:
     name: "Escape to Discworld"
     description: "Read a Terry Pratchett novel"
     xlogfield: "tnntachieve3"
-    bit: 31
+    bit: 33
 - model: scoreboard.achievement
   fields:
     name: "Near Death Experience"
-    description: "#chat to Death while carrying a Terry Pratchett novel"
+    description: "Chat with Death while carrying a Terry Pratchett novel"
     xlogfield: "tnntachieve3"
-    bit: 32
+    bit: 34
 - model: scoreboard.achievement
   fields:
     name: "Prize Inside!"
     description: "Get a spellbook by breaking a randomly-generated statue"
     xlogfield: "tnntachieve3"
-    bit: 33
+    bit: 35
 - model: scoreboard.achievement
   fields:
     name: "Ding-a-Ling"
     description: "Summon a nymph by ringing a cursed bell"
     xlogfield: "tnntachieve3"
-    bit: 34
+    bit: 36
 - model: scoreboard.achievement
   fields:
     name: "Diver Down"
     description: "Dive into a moat or pool and retrieve an item from the bottom"
     xlogfield: "tnntachieve3"
-    bit: 35
+    bit: 37
 - model: scoreboard.achievement
   fields:
     name: "Ceiling Clinging Commute"
     description: "Ride a wumpus over water"
     xlogfield: "tnntachieve3"
-    bit: 36
+    bit: 38
 - model: scoreboard.achievement
   fields:
     name: "Collapse the Wavefunction"
     description: "Open the box containing Schroedinger's Cat"
     xlogfield: "tnntachieve3"
-    bit: 37
+    bit: 39
 - model: scoreboard.achievement
   fields:
     name: "I'm Free! I'm Free!"
     description: "Free a prisoner"
     xlogfield: "tnntachieve3"
-    bit: 38
+    bit: 40
 - model: scoreboard.achievement
   fields:
     name: "Spam, Spam, Spam"
     description: "Read a scroll of mail"
     xlogfield: "tnntachieve3"
-    bit: 39
+    bit: 41
 - model: scoreboard.achievement
   fields:
     name: "Gender Swap"
     description: "Put on an amulet of change"
     xlogfield: "tnntachieve3"
-    bit: 40
+    bit: 42
 - model: scoreboard.achievement
   fields:
     name: "Gender Bender"
     description: "Change gender two or more times"
     xlogfield: "tnntachieve3"
-    bit: 41
+    bit: 43
 - model: scoreboard.achievement
   fields:
     name: "Motherhood"
     description: "Lay an egg"
     xlogfield: "tnntachieve3"
-    bit: 42
+    bit: 44
 - model: scoreboard.achievement
   fields:
     name: "Father Figure"
     description: "Hatch an egg not laid by you and have it come out tame"
     xlogfield: "tnntachieve3"
-    bit: 43
+    bit: 45
 - model: scoreboard.achievement
   fields:
     name: "Shafted"
     description: "Fall down a shaft"
     xlogfield: "tnntachieve3"
-    bit: 44
+    bit: 46
 - model: scoreboard.achievement
   fields:
     name: "Horatius at the Bridge"
     description: "Extinct soldiers or Keystone Kops"
     xlogfield: "tnntachieve3"
-    bit: 45
+    bit: 47
 - model: scoreboard.achievement
   fields:
     name: "Who's That Pretty Girl in the Mirror, There?"
     description: "Deflect a nymph with a mirror"
     xlogfield: "tnntachieve3"
-    bit: 46
+    bit: 48
 - model: scoreboard.achievement
   fields:
     name: "Under New Management"
     description: "Change your alignment by any means"
     xlogfield: "tnntachieve3"
-    bit: 47
+    bit: 49
 - model: scoreboard.achievement
   fields:
     name: "Groundhog Day"
     description: "Return to a forgotten level"
     xlogfield: "tnntachieve3"
-    bit: 48
+    bit: 50
 - model: scoreboard.achievement
   fields:
     name: "Tainted"
     description: "Dip an item in unholy water"
     xlogfield: "tnntachieve3"
-    bit: 49
+    bit: 51
 - model: scoreboard.achievement
   fields:
     name: "Hydrochloric"
     description: "Dissolve iron bars with acid"
     xlogfield: "tnntachieve3"
-    bit: 50
+    bit: 52
 - model: scoreboard.achievement
   fields:
     name: "Predictably, Nothing Happens"
     description: "Break an identified wand of nothing"
     xlogfield: "tnntachieve3"
-    bit: 51
+    bit: 53
 - model: scoreboard.achievement
   fields:
     name: "Wanton Waste"
     description: "Break an identified wand of wishing with at least 1 charge"
     xlogfield: "tnntachieve3"
-    bit: 52
+    bit: 54
 - model: scoreboard.achievement
   fields:
     name: "Neutralized"
     description: "Cancel a monster"
     xlogfield: "tnntachieve3"
-    bit: 53
+    bit: 55
 - model: scoreboard.achievement
   fields:
     name: "Panacea"
     description: "Neutralize a harmful potion with a unicorn horn"
     xlogfield: "tnntachieve3"
-    bit: 54
+    bit: 56
 - model: scoreboard.achievement
   fields:
     name: "Croesus Competitor"
     description: "Finish a game carrying at least 50000 gold"
     xlogfield: "tnntachieve3"
-    bit: 55
+    bit: 57
 - model: scoreboard.achievement
   fields:
     name: "Croesus Buyout"
     description: "Finish a game carrying at least 100000 gold"
     xlogfield: "tnntachieve3"
-    bit: 56
+    bit: 58
 - model: scoreboard.achievement
   fields:
     name: "Palantir"
     description: "Successfully apply a crystal ball"
     xlogfield: "tnntachieve3"
-    bit: 57
+    bit: 59
 - model: scoreboard.achievement
   fields:
     name: "Peak Condition"
     description: "Raise all attributes to at least 18"
     xlogfield: "tnntachieve3"
-    bit: 58
+    bit: 60
 - model: scoreboard.achievement
   fields:
     name: "Replacement Goldfish"
     description: "Cast create familiar"
     xlogfield: "tnntachieve3"
-    bit: 59
+    bit: 61
 - model: scoreboard.achievement
   fields:
     name: "Pop the Question"
     description: "Give a ring of adornment to a succubus"
     xlogfield: "tnntachieve3"
-    bit: 60
+    bit: 62
 - model: scoreboard.achievement
   fields:
     name: "No Soup For You!"
     description: "Get permanently expelled from the Quest"
     xlogfield: "tnntachieve3"
-    bit: 61
+    bit: 63
 - model: scoreboard.achievement
   fields:
     name: "Discerning Palate"
     description: "Gain intrinsic food appraisal"
-    xlogfield: "tnntachieve3"
-    bit: 62
+    xlogfield: "tnntachieve4"
+    bit: 0
 - model: scoreboard.achievement
   fields:
     name: "Banishing Spells Not Included"
     description: "Summon a demon lord"
-    xlogfield: "tnntachieve3"
-    bit: 63
+    xlogfield: "tnntachieve4"
+    bit: 1
 - model: scoreboard.achievement
   fields:
     name: "Dust to Dust"
     description: "Wrest one last charge from a wand of wishing"
     xlogfield: "tnntachieve4"
-    bit: 0
+    bit: 2
 - model: scoreboard.achievement
   fields:
     name: "Teetotaler"
     description: "Neutralize a potion of booze with an amethyst"
     xlogfield: "tnntachieve4"
-    bit: 1
+    bit: 3
 - model: scoreboard.achievement
   fields:
     name: "Spooky Scary Skeletons"
     description: "Get scared by the rattling of a skeleton"
     xlogfield: "tnntachieve4"
-    bit: 2
+    bit: 4
 - model: scoreboard.achievement
   fields:
     name: "Gullible"
     description: "Get out of trouble by successfully lying to a vault guard"
     xlogfield: "tnntachieve4"
-    bit: 3
+    bit: 5
 - model: scoreboard.achievement
   fields:
     name: "Luck of the Grasshopper"
     description: "Reach +13 Luck"
     xlogfield: "tnntachieve4"
-    bit: 4
+    bit: 6
 - model: scoreboard.achievement
   fields:
     name: "Murphy's Law"
     description: "Reach -13 Luck"
     xlogfield: "tnntachieve4"
-    bit: 5
+    bit: 7
 - model: scoreboard.achievement
   fields:
     name: "Looking Slick"
     description: "Grease a piece of armor"
     xlogfield: "tnntachieve4"
-    bit: 6
+    bit: 8
 - model: scoreboard.achievement
   fields:
     name: "The Deathly Hallows"
     description: "Wield a wand of death while wearing an invisibility cloak and amulet of life saving"
     xlogfield: "tnntachieve4"
-    bit: 7
+    bit: 9
 - model: scoreboard.achievement
   fields:
     name: "Indiana Jones"
     description: "Disarm a monster with a bullwhip"
     xlogfield: "tnntachieve4"
-    bit: 8
+    bit: 10
 - model: scoreboard.achievement
   fields:
     name: "Minesweeper"
     description: "Disarm all land mines in Fort Ludios without blowing any up"
     xlogfield: "tnntachieve4"
-    bit: 9
+    bit: 11
 - model: scoreboard.achievement
   fields:
     name: "007"
     description: "Unlock something with a credit card"
     xlogfield: "tnntachieve4"
-    bit: 10
+    bit: 12
 - model: scoreboard.achievement
   fields:
     name: "Bob Ross"
     description: "Release a picture-painting demon from a camera"
     xlogfield: "tnntachieve4"
-    bit: 11
+    bit: 13
 - model: scoreboard.achievement
   fields:
     name: "Got No Talent"
     description: "Scare something by playing music"
     xlogfield: "tnntachieve4"
-    bit: 12
+    bit: 14
 - model: scoreboard.achievement
   fields:
     name: "Cookie Monster"
     description: "Read a fortune without eating its cookie"
     xlogfield: "tnntachieve4"
-    bit: 13
+    bit: 15
 - model: scoreboard.achievement
   fields:
     name: "Say Hello To My Evil Friend"
     description: "Have a non-guaranteed demon lord gated in or summoned"
     xlogfield: "tnntachieve4"
-    bit: 14
+    bit: 16
 - model: scoreboard.achievement
   fields:
     name: "Make your Mark"
     description: "Engrave with an athame"
     xlogfield: "tnntachieve4"
-    bit: 15
+    bit: 17
 - model: scoreboard.achievement
   fields:
     name: "One Hit KO"
     description: "Deal a monster its maximum HP or more of damage (minimum 20)"
     xlogfield: "tnntachieve4"
-    bit: 16
+    bit: 18
 - model: scoreboard.achievement
   fields:
     name: "Drink It To The Next Level"
     description: "Level up by drinking from a sink"
     xlogfield: "tnntachieve4"
-    bit: 17
+    bit: 19
 - model: scoreboard.achievement
   fields:
     name: "You're About To Die, You Scrub"
     description: "Get a special message saying you're about to die, you scrub"
     xlogfield: "tnntachieve4"
-    bit: 18
+    bit: 20
 - model: scoreboard.achievement
   fields:
     name: "Extinctionist Lite"
-    description: "Genocide 20 or more monster species"
+    description: "Perform genocide 5 or more times"
     xlogfield: "tnntachieve4"
-    bit: 19
+    bit: 21
 - model: scoreboard.achievement
   fields:
     name: "Dudley's Hero"
     description: "Extinct newts"
     xlogfield: "tnntachieve4"
-    bit: 20
+    bit: 22
 - model: scoreboard.achievement
   fields:
     name: "Ice Jesus"
     description: "Walk on top of lava unharmed"
     xlogfield: "tnntachieve4"
-    bit: 21
+    bit: 23
 - model: scoreboard.achievement
   fields:
     name: "Rare Loot"
     description: "Acquire an athame that was generated in the inventory of a lich"
     xlogfield: "tnntachieve4"
-    bit: 22
+    bit: 24
 - model: scoreboard.achievement
   fields:
     name: "Boy Scout"
     description: "Complete Sokoban without incurring any penalties for rule-breaking"
     xlogfield: "tnntachieve4"
-    bit: 23
+    bit: 25
 - model: scoreboard.achievement
   fields:
     name: "Sounds Hollow"
     description: "Reveal a secret door with a stethoscope"
     xlogfield: "tnntachieve4"
-    bit: 24
+    bit: 26
 - model: scoreboard.achievement
   fields:
     name: "Unorthodox Exit"
     description: "Reach the Planes via quaffing"
     xlogfield: "tnntachieve4"
-    bit: 25
+    bit: 27
 - model: scoreboard.achievement
   fields:
     name: "Paddling Pool"
     description: "Create pools from a fountain"
     xlogfield: "tnntachieve4"
-    bit: 26
+    bit: 28
 - model: scoreboard.achievement
   fields:
     name: "Practical Joke"
     description: "Have a tin blow up in your face"
     xlogfield: "tnntachieve4"
-    bit: 27
+    bit: 29
 - model: scoreboard.achievement
   fields:
     name: "Amon Hen"
     description: "Get either of the two \"vision\" effects from sitting on a throne"
     xlogfield: "tnntachieve4"
-    bit: 28
+    bit: 30
 - model: scoreboard.achievement
   fields:
     name: "Detonator"
     description: "Explode a large box or chest"
     xlogfield: "tnntachieve4"
-    bit: 29
+    bit: 31
 - model: scoreboard.achievement
   fields:
     name: "Lightbringer"
     description: "Light up at least 20 dark rooms in the Dungeons of Doom"
     xlogfield: "tnntachieve4"
-    bit: 30
+    bit: 32
 - model: scoreboard.achievement
   fields:
     name: "Cosmic Bungee Cord"
     description: "Get sent back a total of 15 or more levels by the mysterious force"
     xlogfield: "tnntachieve4"
-    bit: 31
+    bit: 33
 - model: scoreboard.achievement
   fields:
     name: "No Rulez"
     description: "Remove all watchmen from Minetown"
     xlogfield: "tnntachieve4"
-    bit: 32
+    bit: 34
 - model: scoreboard.achievement
   fields:
     name: "Packing Light"
     description: "Successfully store a bag of holding inside another bag of holding"
     xlogfield: "tnntachieve4"
-    bit: 33
+    bit: 35
 - model: scoreboard.achievement
   fields:
     name: "Shoo Off"
     description: "Make a monster of difficulty 5 or more escape the dungeon"
     xlogfield: "tnntachieve4"
-    bit: 34
+    bit: 36
 - model: scoreboard.achievement
   fields:
     name: "What Have I Unleashed"
     description: "Make a demon lord escape the dungeon"
     xlogfield: "tnntachieve4"
-    bit: 35
+    bit: 37
 - model: scoreboard.achievement
   fields:
     name: "Walking Bullseye"
     description: "Have +30 AC"
     xlogfield: "tnntachieve4"
-    bit: 36
+    bit: 38
 - model: scoreboard.achievement
   fields:
     name: "Tanking It"
     description: "Have -50 AC"
     xlogfield: "tnntachieve4"
-    bit: 37
+    bit: 39
 - model: scoreboard.achievement
   fields:
     name: "Doorstopper"
     description: "Have a door resist 8 consecutive times when trying to open or close it"
     xlogfield: "tnntachieve4"
-    bit: 38
+    bit: 40
 - model: scoreboard.achievement
   fields:
     name: "Practically Permanent"
     description: "Have more than 10,000 turns of a temporary intrinsic"
     xlogfield: "tnntachieve4"
-    bit: 39
+    bit: 41
 - model: scoreboard.achievement
   fields:
     name: "This One Goes To +8"
     description: "Successfully enchant a weapon to +8 or higher"
     xlogfield: "tnntachieve4"
-    bit: 40
+    bit: 42
 - model: scoreboard.achievement
   fields:
     name: "Glowy Blue Upgrade"
     description: "Successfully increase the enchantment on your weapon"
     xlogfield: "tnntachieve4"
-    bit: 41
+    bit: 43
 - model: scoreboard.achievement
   fields:
     name: "Blasters' Handbook"
     description: "Blow up a boulder with a land mine"
     xlogfield: "tnntachieve4"
-    bit: 42
+    bit: 44
 - model: scoreboard.achievement
   fields:
     name: "Loew Life"
     description: "Create a golem from a pile of objects"
     xlogfield: "tnntachieve4"
-    bit: 43
+    bit: 45
 - model: scoreboard.achievement
   fields:
     name: "Never Tell Me the Odds"
     description: "Successfully cast a spell with a failure rate of 95% or greater"
     xlogfield: "tnntachieve4"
-    bit: 44
+    bit: 46
 - model: scoreboard.achievement
   fields:
     name: "Archmage"
     description: "Successfully cast a level 7 spell"
     xlogfield: "tnntachieve4"
-    bit: 45
+    bit: 47
 - model: scoreboard.achievement
   fields:
     name: "Leeroy Jenkins"
     description: "Cross the Castle drawbridge threshold within 30 turns of entering the level"
     xlogfield: "tnntachieve4"
-    bit: 46
+    bit: 48
+- model: scoreboard.achievement
+  fields:
+    name: "Chocoban"
+    description: "Acquire a candy bar generated in Sokoban"
+    xlogfield: "tnntachieve4"
+    bit: 49
