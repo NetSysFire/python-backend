@@ -165,20 +165,22 @@
     <thead>
       <tr class="framed">
         <th></th>
+        <th>ID</th>
         <th>Achievement</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       {% for ach in achievements %}
-        <tr>
+        <tr id="achievement-{{ ach.ingameid }}">
           {% if ach.obtained %}
             <td class="achieved">&check;</td>
           {% else %}
             <td class="not-achieved">&cross;</td>
           {% endif %}
-          <td>{{ ach.name }}</td>
-          <td>{{ ach.description }}</td>
+          <td class="ach-id">#{{ ach.ingameid }}</td>
+          <td class="ach-name">{{ ach.name }}</td>
+          <td class="ach-desc">{{ ach.description }}</td>
         </tr>
       {% endfor %}
     </tbody>
