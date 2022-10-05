@@ -2,56 +2,56 @@
   fields:
     name: Ringing in My Ears
     description: Get the Bell of Opening
-    ingameid: V00
+    ingameid: V01
     xlogfield: achieve
     bit: 0
 - model: scoreboard.achievement
   fields:
     name: Feel the Burn
     description: Enter Gehennom
-    ingameid: V01
+    ingameid: V02
     xlogfield: achieve
     bit: 1
 - model: scoreboard.achievement
   fields:
     name: Emerging Into the Light
     description: Get the Candelabrum of Invocation
-    ingameid: V02
+    ingameid: V03
     xlogfield: achieve
     bit: 2
 - model: scoreboard.achievement
   fields:
     name: Weighing of the Heart
     description: Get the Book of the Dead
-    ingameid: V03
+    ingameid: V04
     xlogfield: achieve
     bit: 3
 - model: scoreboard.achievement
   fields:
     name: Bell, Book and Candle
     description: Perform the invocation ritual
-    ingameid: V04
+    ingameid: V05
     xlogfield: achieve
     bit: 4
 - model: scoreboard.achievement
   fields:
     name: My Preciousss
     description: Get the Amulet of Yendor
-    ingameid: V05
+    ingameid: V06
     xlogfield: achieve
     bit: 5
 - model: scoreboard.achievement
   fields:
     name: From the Dungeon they Came
     description: Enter the Elemental Planes
-    ingameid: V06
+    ingameid: V07
     xlogfield: achieve
     bit: 6
 - model: scoreboard.achievement
   fields:
     name: The Halls of the Gods
     description: Enter the Astral Plane
-    ingameid: V07
+    ingameid: V08
     xlogfield: achieve
     bit: 7
 # note: bit 8, 0x100, is used for "u.uachieve.ascended". We don't track this as
@@ -60,21 +60,21 @@
   fields:
     name: Are You Feeling Lucky
     description: Get the luckstone from Mines' End
-    ingameid: V09
+    ingameid: V10
     xlogfield: achieve
     bit: 9
 - model: scoreboard.achievement
   fields:
     name: Boulder Pusher
     description: Finish Sokoban
-    ingameid: V10
+    ingameid: V11
     xlogfield: achieve
     bit: 10
 - model: scoreboard.achievement
   fields:
     name: Anti-Stoner
     description: Kill Medusa
-    ingameid: V11
+    ingameid: V12
     xlogfield: achieve
     bit: 11
 - model: scoreboard.achievement
