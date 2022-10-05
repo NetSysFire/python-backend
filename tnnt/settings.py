@@ -241,13 +241,14 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     (r"by the invisible ", "by "),
     (r"by (an|a) invisible ", "by a "),
     (r"by invisible ", "by "),
-    (r" (her|his) ", " eir "),
-    (r" (herself|himself) ", " eirself "),
-    (r" (herself|himself)$", " eirself"),
+    (r" (her|his) ", " their "),
+    (r" (herself|himself) ", " themselves "),
+    (r" (herself|himself)$", " themselves"),
     (r" (called|named) .*", ""),
-    (r" \(with the Amulet\)$", ""),
+    # (r" \(with the Amulet\)$", ""), # leave this as a consolation prize
     (r"choked on .*", "choked on something"),
     (r"killed by kicking .*", "killed by kicking something"),
+    (r"killed by touching .*", "killed by touching an artifact"),
     # (r"killed by a falling (?!rock)$", "killed by a falling object"), # don't think we need this
     (r" (an? )?M[rs]\. [A-Z].*[,;] the shopkeeper", " a shopkeeper"),
     (r" (an?|the) ghost of .+", " a ghost"),
