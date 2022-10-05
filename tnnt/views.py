@@ -369,7 +369,7 @@ class AchievementsView(TemplateView):
         kwargs['achievements'] = Achievement.objects \
             .annotate(nplayers=Count('game__player', distinct=True),
                       nclans=Count('game__player__clan', distinct=True)) \
-            .order_by('-nplayers', '-nclans') \
+            .order_by('-nplayers', '-nclans', 'id') \
             .values()
         return kwargs
 
