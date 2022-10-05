@@ -219,6 +219,11 @@ div.achieve-top table tbody tr:last-child {
   max-width: 32em;
 }
 
+/* small caps for Near Death Experience */
+#achievement-227 .ach-name {
+  font-variant: small-caps;
+}
+
 /* style for the attained achievements */
 
 .achieved {
