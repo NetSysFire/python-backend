@@ -183,6 +183,7 @@ def aggregatePlayerData():
         # simple aggregates (game counts)
         plr.total_games = gamesby_plr.count()
         plr.wins = winsby_plr.count()
+        plr.splats = gamesby_plr.filter(splatted=True).count()
         plr.games_over_1000_turns = gamesby_plr.filter(turns__gte=1000).count()
         # This is the source of truth for "what is a scummed game".
         plr.games_scummed = gamesby_plr.filter(

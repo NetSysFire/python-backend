@@ -60,6 +60,7 @@ class LeaderboardBaseFields(models.Model):
     games_scummed          = models.IntegerField(default=0)
     total_games            = models.IntegerField(default=0)
     wins                   = models.IntegerField(default=0)
+    splats                 = models.IntegerField(default=0)
     lowest_turncount_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     fastest_realtime_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     max_conducts_asc       = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
