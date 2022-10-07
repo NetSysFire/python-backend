@@ -172,8 +172,9 @@ class Source(models.Model):
 class GameManager(models.Manager):
     # TODO: why do we need this as a manager? Couldn't this logic just live in pollxlogs?
     # Post 2021 concern, unless this proves slow for some reason
-    simple_fields = ['version', 'role', 'race', 'gender', 'align', 'points', 'turns', 'realtime', 'maxlvl', 'death',
-                     'align0', 'gender0']
+    simple_fields = ['version', 'role', 'race', 'gender', 'align', 'points',
+                     'turns', 'realtime', 'maxlvl', 'death', 'align0',
+                     'gender0', 'deathlev']
 
     def from_xlog(self, source, xlog_dict):
         # TODO: validate xlog_dict contains some set of 'required_fields'
@@ -193,6 +194,12 @@ class GameManager(models.Manager):
         # post 2021 TODO: do something about magic numbers in this method
         if xlog_dict['achieve'] & 0x100:
             kwargs['won'] = True
+        else:
+            # a non-winning game is a splat if they had the amulet at some point
+            # (we count escapes in celestial disgrace and any other
+            # non-ascension end to the game as a splat)
+            if xlog_dict['achieve'] & 0x20:
+                kwargs['splatted'] = True
 
         # ditto for mines/soko
         # post 2021 TODO: do something about magic numbers in this method
@@ -264,8 +271,13 @@ class Game(models.Model):
     won          = models.BooleanField(default=False)
     mines_soko   = models.BooleanField(default=False)
 
+    # For tracking certain subsets of non-won games. For our purposes, a "splat"
+    # is a game that got to the final run but did not end in victory. deathlev
+    # is a native xlogfile field.
+    splatted     = models.BooleanField(default=False)
+    deathlev     = models.IntegerField(null=True)
+
     # not necessary for tnnt but may re-introduce for NHS
-    # deathlev     = models.IntegerField(null=True)
     # hp           = models.BigIntegerField(null=True)
     # maxhp        = models.BigIntegerField(null=True)
     # tracked as a conduct in nh-tnnt
