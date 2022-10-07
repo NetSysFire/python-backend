@@ -116,3 +116,22 @@ full path of the real dgamelaunch sqlite database.
 
 ### Run dev server
 `$ python manage.py runserver`
+
+### Clearing databases
+Use `reset_db.sh` when you want to reset the DB structure; i.e. after changing a
+model.
+
+Use `manage.py wipe_db` when you want to delete records from the database. It
+offers different options for erasing items. Note that all the options wipe all
+the games and reset the saved file positions of the downloaded source files to
+0.
+
+### Loading a custom xlogfile
+This is if you want to test specific behavior with a manually edited xlogfile.
+After making sure that Games are cleared from the database and at least one
+Source exists in the database, run:
+
+`$ python manage.py pollxlogs --file <your custom xlogfile>`
+
+Note that created Games will be associated with a random Source in the database,
+so dumplog links will probably not work.

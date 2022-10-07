@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime, timedelta, timezone
 from tnnt import settings
 from tnnt import dumplog_utils
+import sys
 
 # If adding any more models to this file, be sure to add a deletion for them in
 # wipe_db.py.
@@ -184,6 +185,8 @@ class GameManager(models.Manager):
         # filter explore/wizmode games
         # post 2021 TODO: do something about magic numbers in this method
         if xlog_dict['flags'] & 0x1 or xlog_dict['flags'] & 0x2:
+            print('Game not parsed because it was in wizard or explore mode',
+                  file=sys.stderr)
             return None
 
         # assign 'won' boolean
@@ -206,6 +209,8 @@ class GameManager(models.Manager):
         # the time window of the tournament
         if (kwargs['starttime'] < settings.TOURNAMENT_START
             or kwargs['endtime'] > settings.TOURNAMENT_END):
+            print('Game not parsed because it was outside tournament time',
+                  file=sys.stderr)
             return None
 
         # find/create player
