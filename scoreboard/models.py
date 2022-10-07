@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime, timedelta, timezone
 from tnnt import settings
 from tnnt import dumplog_utils
 import sys
@@ -169,75 +168,6 @@ class Source(models.Model):
     # description = models.CharField(max_length=256)
     # website     = models.URLField(null=True)
 
-class GameManager(models.Manager):
-    # TODO: why do we need this as a manager? Couldn't this logic just live in pollxlogs?
-    # Post 2021 concern, unless this proves slow for some reason
-    simple_fields = ['version', 'role', 'race', 'gender', 'align', 'points',
-                     'turns', 'realtime', 'maxlvl', 'death', 'align0',
-                     'gender0', 'deathlev']
-
-    def from_xlog(self, source, xlog_dict):
-        # TODO: validate xlog_dict contains some set of 'required_fields'
-        # simple fields get keyed directly to keyword args to self.create()
-        kwargs = {'source': source}
-        for key in self.simple_fields:
-            kwargs[key] = xlog_dict[key]
-
-        # filter explore/wizmode games
-        # post 2021 TODO: do something about magic numbers in this method
-        if xlog_dict['flags'] & 0x1 or xlog_dict['flags'] & 0x2:
-            print('Game not parsed because it was in wizard or explore mode',
-                  file=sys.stderr)
-            return None
-
-        # assign 'won' boolean
-        # post 2021 TODO: do something about magic numbers in this method
-        if xlog_dict['achieve'] & 0x100:
-            kwargs['won'] = True
-        else:
-            # a non-winning game is a splat if they had the amulet at some point
-            # (we count escapes in celestial disgrace and any other
-            # non-ascension end to the game as a splat)
-            if xlog_dict['achieve'] & 0x20:
-                kwargs['splatted'] = True
-
-        # ditto for mines/soko
-        # post 2021 TODO: do something about magic numbers in this method
-        if xlog_dict['achieve'] & 0x600:
-            kwargs['mines_soko'] = True
-
-        # time/duration information
-        kwargs['starttime'] = datetime.fromtimestamp(xlog_dict['starttime'], timezone.utc)
-        kwargs['endtime'] = datetime.fromtimestamp(xlog_dict['endtime'], timezone.utc)
-        kwargs['realtime'] = timedelta(seconds=xlog_dict['realtime'])
-        kwargs['wallclock'] = kwargs['endtime'] - kwargs['starttime']
-
-        # do not save a Game here if it partially or completely falls outside
-        # the time window of the tournament
-        if (kwargs['starttime'] < settings.TOURNAMENT_START
-            or kwargs['endtime'] > settings.TOURNAMENT_END):
-            print('Game not parsed because it was outside tournament time',
-                  file=sys.stderr)
-            return None
-
-        # find/create player
-        try:
-            player = Player.objects.get(name=xlog_dict['name'])
-        except Player.DoesNotExist:
-            player = Player(name=xlog_dict['name'], clan=None, clan_admin=False)
-            player.save()
-        kwargs['player'] = player
-
-        game = self.create(**kwargs)
-        for conduct in Conduct.objects.all():
-            if conduct.xlogfield in xlog_dict and xlog_dict[conduct.xlogfield] & (1 << conduct.bit):
-                game.conducts.add(conduct)
-        for achieve in Achievement.objects.all():
-            if achieve.xlogfield in xlog_dict and xlog_dict[achieve.xlogfield] & (1 << achieve.bit):
-                game.achievements.add(achieve)
-
-        return game
-
 class Game(models.Model):
     # Represents a single game: a single line in the xlog, a single dumplog, etc.
     # The following fields are those drawn directly from the xlogfile:
@@ -289,10 +219,6 @@ class Game(models.Model):
     conducts     = models.ManyToManyField(Conduct)
     achievements = models.ManyToManyField(Achievement)
     source       = models.ForeignKey(Source, on_delete=models.PROTECT)
-
-    # this allows the GameManager class to handle creation of new Game objects,
-    # using Game.objects.from_xlog()
-    objects = GameManager()
 
     # Return a URL to the dumplog of this game.
     # ASSUMPTION: No two Games of the same player will have the same starttime.
