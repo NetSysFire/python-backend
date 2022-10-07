@@ -2219,3 +2219,10 @@
     ingameid: "306"
     xlogfield: "tnntachieve4"
     bit: 49
+- model: scoreboard.achievement
+  fields:
+    name: "Thirst For Punishment"
+    description: "Drink all harmful types of potion (conf, blind, paral, hallu, sleep, booze, sick, acid)"
+    ingameid: "307"
+    xlogfield: "tnntachieve4"
+    bit: 50
