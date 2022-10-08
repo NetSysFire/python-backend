@@ -156,21 +156,21 @@
     description: Never quit or escape within the first 100 turns
 - model: scoreboard.trophy
   fields:
-    name: Never Kill the Quest Nemesis
-    description: Never kill the quest nemesis
+    name: Keep Your Nemesis Alive
+    description: Win a game without your quest nemesis dying
 - model: scoreboard.trophy
   fields:
-    name: Never Kill Vlad
-    description: Never kill Vlad
+    name: Keep Vlad Alive
+    description: Win a game without Vlad dying
 - model: scoreboard.trophy
   fields:
-    name: Never Kill Rodney
-    description: Never kill the Wizard of Yendor
+    name: Keep Rodney Alive
+    description: Win a game without the Wizard of Yendor dying
 - model: scoreboard.trophy
   fields:
-    name: Never Kill the High Priest of Moloch
-    description: Never kill the High Priest of Moloch
+    name: Keep The High Priest of Moloch Alive
+    description: Win a game without the High Priest of Moloch dying
 - model: scoreboard.trophy
   fields:
-    name: Never Kill a Rider
-    description: Never kill a Rider
+    name: Keep The Riders Alive
+    description: Win a game without any Riders dying
