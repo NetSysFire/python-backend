@@ -989,1240 +989,1261 @@
     bit: 1
 - model: scoreboard.achievement
   fields:
-    name: "Go Forth and Smite"
-    description: "Receive an artifact gift from your deity"
+    name: "Ultimate Polearm Geek"
+    description: "Collect one of each of the 12 types of polearm"
     ingameid: "131"
     xlogfield: "tnntachieve2"
     bit: 2
 - model: scoreboard.achievement
   fields:
-    name: "Too Little Too Late"
-    description: "Get a sacrifice gift on the Astral Plane"
+    name: "Go Forth and Smite"
+    description: "Receive an artifact gift from your deity"
     ingameid: "132"
     xlogfield: "tnntachieve2"
     bit: 3
 - model: scoreboard.achievement
   fields:
-    name: "Some Watery Tart"
-    description: "Be gifted Excalibur"
+    name: "Too Little Too Late"
+    description: "Get a sacrifice gift on the Astral Plane"
     ingameid: "133"
     xlogfield: "tnntachieve2"
     bit: 4
 - model: scoreboard.achievement
   fields:
-    name: "Superfood"
-    description: "Gain strength by eating royal jelly"
+    name: "Some Watery Tart"
+    description: "Be gifted Excalibur"
     ingameid: "134"
     xlogfield: "tnntachieve2"
     bit: 5
 - model: scoreboard.achievement
   fields:
-    name: "You Are What You Eat"
-    description: "Gain an intrinsic by eating a corpse (or tin or glob)"
+    name: "Superfood"
+    description: "Gain strength by eating royal jelly"
     ingameid: "135"
     xlogfield: "tnntachieve2"
     bit: 6
 - model: scoreboard.achievement
   fields:
-    name: "Magivore"
-    description: "Gain a magical intrinsic by eating a piece of jewelry"
+    name: "You Are What You Eat"
+    description: "Gain an intrinsic by eating a corpse (or tin or glob)"
     ingameid: "136"
     xlogfield: "tnntachieve2"
     bit: 7
 - model: scoreboard.achievement
   fields:
-    name: "Stunning Flavor"
-    description: "Get stunned by eating bat meat"
+    name: "Magivore"
+    description: "Gain a magical intrinsic by eating a piece of jewelry"
     ingameid: "137"
     xlogfield: "tnntachieve2"
     bit: 8
 - model: scoreboard.achievement
   fields:
-    name: "Wasn't a Meal, Wasn't Ready, And You Shouldn't Have Eaten It"
-    description: "Eat a military ration"
+    name: "Stunning Flavor"
+    description: "Get stunned by eating bat meat"
     ingameid: "138"
     xlogfield: "tnntachieve2"
     bit: 9
 - model: scoreboard.achievement
   fields:
-    name: "Tastes Like Chicken"
-    description: "Eat chickatrice or cockatrice meat"
+    name: "Wasn't a Meal, Wasn't Ready, And You Shouldn't Have Eaten It"
+    description: "Eat a military ration"
     ingameid: "139"
     xlogfield: "tnntachieve2"
     bit: 10
 - model: scoreboard.achievement
   fields:
-    name: "Heroes' Feast"
-    description: "Eat at least 3 artifacts"
+    name: "Tastes Like Chicken"
+    description: "Eat chickatrice or cockatrice meat"
     ingameid: "140"
     xlogfield: "tnntachieve2"
     bit: 11
 - model: scoreboard.achievement
   fields:
-    name: "Buzzing With Energy"
-    description: "Gain at least 5 max Pw by eating corpses"
+    name: "Heroes' Feast"
+    description: "Eat at least 3 artifacts"
     ingameid: "141"
     xlogfield: "tnntachieve2"
     bit: 12
 - model: scoreboard.achievement
   fields:
-    name: "Culinary Experience"
-    description: "Gain a level by eating a tripe ration"
+    name: "Buzzing With Energy"
+    description: "Gain at least 5 max Pw by eating corpses"
     ingameid: "142"
     xlogfield: "tnntachieve2"
     bit: 13
 - model: scoreboard.achievement
   fields:
-    name: "The Omelet of Yendor"
-    description: "With 3 eggs, spinach, wolfsbane, garlic, eucalyptus, violet fungus, oil, and a dented pot all at once, put on an apron and wield a knife"
+    name: "Culinary Experience"
+    description: "Gain a level by eating a tripe ration"
     ingameid: "143"
     xlogfield: "tnntachieve2"
     bit: 14
 - model: scoreboard.achievement
   fields:
-    name: "Pet Whisperer"
-    description: "Tame a monster by feeding it"
+    name: "The Omelet of Yendor"
+    description: "With 3 eggs, spinach, wolfsbane, garlic, eucalyptus, violet fungus, oil, and a dented pot all at once, put on an apron and wield a knife"
     ingameid: "144"
     xlogfield: "tnntachieve2"
     bit: 15
 - model: scoreboard.achievement
   fields:
-    name: "Beast Master"
-    description: "Tame a monster without using food"
+    name: "Pet Whisperer"
+    description: "Tame a monster by feeding it"
     ingameid: "145"
     xlogfield: "tnntachieve2"
     bit: 16
 - model: scoreboard.achievement
   fields:
-    name: "Shifty"
-    description: "Tame a shapeshifter in any way"
+    name: "Beast Master"
+    description: "Tame a monster without using food"
     ingameid: "146"
     xlogfield: "tnntachieve2"
     bit: 17
 - model: scoreboard.achievement
   fields:
-    name: "Cat Lady"
-    description: "Tame seven \"f\" in the course of one game"
+    name: "Shifty"
+    description: "Tame a shapeshifter in any way"
     ingameid: "147"
     xlogfield: "tnntachieve2"
     bit: 18
 - model: scoreboard.achievement
   fields:
-    name: "Monkey Business"
-    description: "Tame a monkey or ape by giving it a banana"
+    name: "Cat Lady"
+    description: "Tame seven \"f\" in the course of one game"
     ingameid: "148"
     xlogfield: "tnntachieve2"
     bit: 19
 - model: scoreboard.achievement
   fields:
-    name: "Best Friends Forever"
-    description: "Take your starting pet to full adulthood"
+    name: "Monkey Business"
+    description: "Tame a monkey or ape by giving it a banana"
     ingameid: "149"
     xlogfield: "tnntachieve2"
     bit: 20
 - model: scoreboard.achievement
   fields:
-    name: "Pet Rescue"
-    description: "Free a pet from a trap that you didn't create yourself"
+    name: "Best Friends Forever"
+    description: "Take your starting pet to full adulthood"
     ingameid: "150"
     xlogfield: "tnntachieve2"
     bit: 21
 - model: scoreboard.achievement
   fields:
-    name: "Distinction Without a Difference"
-    description: "Polymorph a pet using a polytrap"
+    name: "Pet Rescue"
+    description: "Free a pet from a trap that you didn't create yourself"
     ingameid: "151"
     xlogfield: "tnntachieve2"
     bit: 22
 - model: scoreboard.achievement
   fields:
-    name: "Tenacious Companion"
-    description: "Have a pet survive all the way to the Astral Plane that you brought into the Plane of Earth"
+    name: "Distinction Without a Difference"
+    description: "Polymorph a pet using a polytrap"
     ingameid: "152"
     xlogfield: "tnntachieve2"
     bit: 23
 - model: scoreboard.achievement
   fields:
-    name: "Those Who Came Before"
-    description: "Sight another player's bones pile"
+    name: "Tenacious Companion"
+    description: "Have a pet survive all the way to the Astral Plane that you brought into the Plane of Earth"
     ingameid: "153"
     xlogfield: "tnntachieve2"
     bit: 24
 - model: scoreboard.achievement
   fields:
-    name: "Imitation Bones"
-    description: "Step onto the Rogue level fake bones pile"
+    name: "Those Who Came Before"
+    description: "Sight another player's bones pile"
     ingameid: "154"
     xlogfield: "tnntachieve2"
     bit: 25
 - model: scoreboard.achievement
   fields:
-    name: "Double Bones"
-    description: "Encounter two bones piles on a single level"
+    name: "Imitation Bones"
+    description: "Step onto the Rogue level fake bones pile"
     ingameid: "155"
     xlogfield: "tnntachieve2"
     bit: 26
 - model: scoreboard.achievement
   fields:
-    name: "Mr. Bones' Wild Ride"
-    description: "Find the bones of four former heroes in one game"
+    name: "Double Bones"
+    description: "Encounter two bones piles on a single level"
     ingameid: "156"
     xlogfield: "tnntachieve2"
     bit: 27
 - model: scoreboard.achievement
   fields:
-    name: "Civilized Cooking"
-    description: "Open a tin with a tin opener"
+    name: "Mr. Bones' Wild Ride"
+    description: "Find the bones of four former heroes in one game"
     ingameid: "157"
     xlogfield: "tnntachieve2"
     bit: 28
 - model: scoreboard.achievement
   fields:
-    name: "Exotic Meat"
-    description: "Tin a unique monster"
+    name: "Civilized Cooking"
+    description: "Open a tin with a tin opener"
     ingameid: "158"
     xlogfield: "tnntachieve2"
     bit: 29
 - model: scoreboard.achievement
   fields:
-    name: "Tinned Out"
-    description: "Use up a tinning kit"
+    name: "Exotic Meat"
+    description: "Tin a unique monster"
     ingameid: "159"
     xlogfield: "tnntachieve2"
     bit: 30
 - model: scoreboard.achievement
   fields:
-    name: "Reincarnation Cancelled"
-    description: "Get a troll corpse to rot"
+    name: "Tinned Out"
+    description: "Use up a tinning kit"
     ingameid: "160"
     xlogfield: "tnntachieve2"
     bit: 31
 - model: scoreboard.achievement
   fields:
-    name: "Well... Bye"
-    description: "Prevent a Rider from resurrecting"
+    name: "Reincarnation Cancelled"
+    description: "Get a troll corpse to rot"
     ingameid: "161"
     xlogfield: "tnntachieve2"
     bit: 32
 - model: scoreboard.achievement
   fields:
-    name: "Only Mostly Dead"
-    description: "Resurrect a corpse"
+    name: "Well... Bye"
+    description: "Prevent a Rider from resurrecting"
     ingameid: "162"
     xlogfield: "tnntachieve2"
     bit: 33
 - model: scoreboard.achievement
   fields:
-    name: "Necromancer"
-    description: "Resurrect a fallen pet and have it return tame"
+    name: "Only Mostly Dead"
+    description: "Resurrect a corpse"
     ingameid: "163"
     xlogfield: "tnntachieve2"
     bit: 34
 - model: scoreboard.achievement
   fields:
-    name: "Asudem"
-    description: "Revive Perseus"
+    name: "Necromancer"
+    description: "Resurrect a fallen pet and have it return tame"
     ingameid: "164"
     xlogfield: "tnntachieve2"
     bit: 35
 - model: scoreboard.achievement
   fields:
-    name: "So Thou Thought Thou Couldst Resurrect Me"
-    description: "Resurrect the Wizard of Yendor"
+    name: "Asudem"
+    description: "Revive Perseus"
     ingameid: "165"
     xlogfield: "tnntachieve2"
     bit: 36
 - model: scoreboard.achievement
   fields:
-    name: "Insert Quarter to Continue"
-    description: "Get life-saved"
+    name: "So Thou Thought Thou Couldst Resurrect Me"
+    description: "Resurrect the Wizard of Yendor"
     ingameid: "166"
     xlogfield: "tnntachieve2"
     bit: 37
 - model: scoreboard.achievement
   fields:
-    name: "Always Talk to the Wise Old Man"
-    description: "Chat with Izchak"
+    name: "Insert Quarter to Continue"
+    description: "Get life-saved"
     ingameid: "167"
     xlogfield: "tnntachieve2"
     bit: 38
 - model: scoreboard.achievement
   fields:
-    name: "Dungeon Economics"
-    description: "Buy or sell something at a shop"
+    name: "Always Talk to the Wise Old Man"
+    description: "Chat with Izchak"
     ingameid: "168"
     xlogfield: "tnntachieve2"
     bit: 39
 - model: scoreboard.achievement
   fields:
-    name: "Conspicuous Consumption"
-    description: "Buy an unidentified gem from a shop"
+    name: "Dungeon Economics"
+    description: "Buy or sell something at a shop"
     ingameid: "169"
     xlogfield: "tnntachieve2"
     bit: 40
 - model: scoreboard.achievement
   fields:
-    name: "The Art of the Deal"
-    description: "Bankrupt a shopkeeper by getting all their money"
+    name: "Conspicuous Consumption"
+    description: "Buy an unidentified gem from a shop"
     ingameid: "170"
     xlogfield: "tnntachieve2"
     bit: 41
 - model: scoreboard.achievement
   fields:
-    name: "Stop, Thief!"
-    description: "Be chased by the Keystone Kops"
+    name: "The Art of the Deal"
+    description: "Bankrupt a shopkeeper by getting all their money"
     ingameid: "171"
     xlogfield: "tnntachieve2"
     bit: 42
 - model: scoreboard.achievement
   fields:
-    name: "The Last Chance Outpost"
-    description: "Visit a shop at or below level 20"
+    name: "Stop, Thief!"
+    description: "Be chased by the Keystone Kops"
     ingameid: "172"
     xlogfield: "tnntachieve2"
     bit: 43
 - model: scoreboard.achievement
   fields:
-    name: "Money Talks"
-    description: "Bribe a demon lord with at least 25000 gold"
+    name: "The Last Chance Outpost"
+    description: "Visit a shop at or below level 20"
     ingameid: "173"
     xlogfield: "tnntachieve2"
     bit: 44
 - model: scoreboard.achievement
   fields:
-    name: "The Negotiator"
-    description: "Successfully bribe a demon lord with 1 zorkmid"
+    name: "Money Talks"
+    description: "Bribe a demon lord with at least 25000 gold"
     ingameid: "174"
     xlogfield: "tnntachieve2"
     bit: 45
 - model: scoreboard.achievement
   fields:
-    name: "Look the Other Way"
-    description: "Successfully bribe a mercenary"
+    name: "The Negotiator"
+    description: "Successfully bribe a demon lord with 1 zorkmid"
     ingameid: "175"
     xlogfield: "tnntachieve2"
     bit: 46
 - model: scoreboard.achievement
   fields:
-    name: "A Little Light Larceny"
-    description: "Get robbed by a nymph"
+    name: "Look the Other Way"
+    description: "Successfully bribe a mercenary"
     ingameid: "176"
     xlogfield: "tnntachieve2"
     bit: 47
 - model: scoreboard.achievement
   fields:
-    name: "Pot of Greed"
-    description: "Have your purse lightened by a leprechaun"
+    name: "A Little Light Larceny"
+    description: "Get robbed by a nymph"
     ingameid: "177"
     xlogfield: "tnntachieve2"
     bit: 48
 - model: scoreboard.achievement
   fields:
-    name: "The Birds and the Bees"
-    description: "Dally with a foocubus"
+    name: "Pot of Greed"
+    description: "Have your purse lightened by a leprechaun"
     ingameid: "178"
     xlogfield: "tnntachieve2"
     bit: 49
 - model: scoreboard.achievement
   fields:
-    name: "Hello, Nurse!"
-    description: "Get a nurse to heal you or raise your max HP"
+    name: "The Birds and the Bees"
+    description: "Dally with a foocubus"
     ingameid: "179"
     xlogfield: "tnntachieve2"
     bit: 50
 - model: scoreboard.achievement
   fields:
-    name: "Tin Foil Hat"
-    description: "Dodge a brainsucking attack"
+    name: "Hello, Nurse!"
+    description: "Get a nurse to heal you or raise your max HP"
     ingameid: "180"
     xlogfield: "tnntachieve2"
     bit: 51
 - model: scoreboard.achievement
   fields:
-    name: "Who You Gonna Call?"
-    description: "Get scared by a ghost"
+    name: "Tin Foil Hat"
+    description: "Dodge a brainsucking attack"
     ingameid: "181"
     xlogfield: "tnntachieve2"
     bit: 52
 - model: scoreboard.achievement
   fields:
-    name: "Heisenberg"
-    description: "Become uncertain about your position or velocity"
+    name: "Who You Gonna Call?"
+    description: "Get scared by a ghost"
     ingameid: "182"
     xlogfield: "tnntachieve2"
     bit: 53
 - model: scoreboard.achievement
   fields:
-    name: "Yoink!"
-    description: "Have the Amulet of Yendor stolen from you"
+    name: "Heisenberg"
+    description: "Become uncertain about your position or velocity"
     ingameid: "183"
     xlogfield: "tnntachieve2"
     bit: 54
 - model: scoreboard.achievement
   fields:
-    name: "Indulgences"
-    description: "Buy protection from a priest"
+    name: "Yoink!"
+    description: "Have the Amulet of Yendor stolen from you"
     ingameid: "184"
     xlogfield: "tnntachieve2"
     bit: 55
 - model: scoreboard.achievement
   fields:
-    name: "Orthodoxy"
-    description: "Convert an altar"
+    name: "Indulgences"
+    description: "Buy protection from a priest"
     ingameid: "185"
     xlogfield: "tnntachieve2"
     bit: 56
 - model: scoreboard.achievement
   fields:
-    name: "Potions of Booze Cost More Than That"
-    description: "Get two bits for an ale from a priest"
+    name: "Orthodoxy"
+    description: "Convert an altar"
     ingameid: "186"
     xlogfield: "tnntachieve2"
     bit: 57
 - model: scoreboard.achievement
   fields:
-    name: "Fumata Bianca"
-    description: "Get a priest to grow up into a high priest"
+    name: "Potions of Booze Cost More Than That"
+    description: "Get two bits for an ale from a priest"
     ingameid: "187"
     xlogfield: "tnntachieve2"
     bit: 58
 - model: scoreboard.achievement
   fields:
-    name: "Get Flashed"
-    description: "Learn an item's BUC status from an altar"
+    name: "Fumata Bianca"
+    description: "Get a priest to grow up into a high priest"
     ingameid: "188"
     xlogfield: "tnntachieve2"
     bit: 59
 - model: scoreboard.achievement
   fields:
-    name: "The Royal Treatment"
-    description: "Sit on a throne"
+    name: "Get Flashed"
+    description: "Learn an item's BUC status from an altar"
     ingameid: "189"
     xlogfield: "tnntachieve2"
     bit: 60
 - model: scoreboard.achievement
   fields:
-    name: "It'll Turn Up Later"
-    description: "Drop a ring in a sink"
+    name: "The Royal Treatment"
+    description: "Sit on a throne"
     ingameid: "190"
     xlogfield: "tnntachieve2"
     bit: 61
 - model: scoreboard.achievement
   fields:
-    name: "Isaac Newton"
-    description: "Get fruit by kicking a tree"
+    name: "It'll Turn Up Later"
+    description: "Drop a ring in a sink"
     ingameid: "191"
     xlogfield: "tnntachieve2"
     bit: 62
 - model: scoreboard.achievement
   fields:
-    name: "Not The Bees"
-    description: "Get bees by kicking a tree"
+    name: "Isaac Newton"
+    description: "Get fruit by kicking a tree"
     ingameid: "192"
     xlogfield: "tnntachieve2"
     bit: 63
 - model: scoreboard.achievement
   fields:
-    name: "Wash it Clean"
-    description: "Uncurse an item in a fountain"
+    name: "Not The Bees"
+    description: "Get bees by kicking a tree"
     ingameid: "193"
     xlogfield: "tnntachieve3"
     bit: 0
 - model: scoreboard.achievement
   fields:
-    name: "Well-Read"
-    description: "Learn a level 5+ spell"
+    name: "Wash it Clean"
+    description: "Uncurse an item in a fountain"
     ingameid: "194"
     xlogfield: "tnntachieve3"
     bit: 1
 - model: scoreboard.achievement
   fields:
-    name: "Hand Crafted"
-    description: "Make a dragon scale mail"
+    name: "Well-Read"
+    description: "Learn a level 5+ spell"
     ingameid: "195"
     xlogfield: "tnntachieve3"
     bit: 2
 - model: scoreboard.achievement
   fields:
-    name: "The Most Dangerous Game"
-    description: "Catch a monster in a trap set by you"
+    name: "Hand Crafted"
+    description: "Make a dragon scale mail"
     ingameid: "196"
     xlogfield: "tnntachieve3"
     bit: 3
 - model: scoreboard.achievement
   fields:
-    name: "Foobear"
-    description: "Catch a bearish monster in a bear trap you set"
+    name: "The Most Dangerous Game"
+    description: "Catch a monster in a trap set by you"
     ingameid: "197"
     xlogfield: "tnntachieve3"
     bit: 4
 - model: scoreboard.achievement
   fields:
-    name: "Liberated"
-    description: "Get yourself unpunished"
+    name: "Foobear"
+    description: "Catch a bearish monster in a bear trap you set"
     ingameid: "198"
     xlogfield: "tnntachieve3"
     bit: 5
 - model: scoreboard.achievement
   fields:
-    name: "It's Called That For a Reason"
-    description: "Come to earth by levitating over a sink"
+    name: "Liberated"
+    description: "Get yourself unpunished"
     ingameid: "199"
     xlogfield: "tnntachieve3"
     bit: 6
 - model: scoreboard.achievement
   fields:
-    name: "Scribe"
-    description: "Write a scroll with a magic marker"
+    name: "It's Called That For a Reason"
+    description: "Come to earth by levitating over a sink"
     ingameid: "200"
     xlogfield: "tnntachieve3"
     bit: 7
 - model: scoreboard.achievement
   fields:
-    name: "First Edition"
-    description: "Write a spellbook"
+    name: "Scribe"
+    description: "Write a scroll with a magic marker"
     ingameid: "201"
     xlogfield: "tnntachieve3"
     bit: 8
 - model: scoreboard.achievement
   fields:
-    name: "Dragon Rider"
-    description: "Ride a dragon"
+    name: "First Edition"
+    description: "Write a spellbook"
     ingameid: "202"
     xlogfield: "tnntachieve3"
     bit: 9
 - model: scoreboard.achievement
   fields:
-    name: "Shimmer"
-    description: "Erosionproof an item"
+    name: "Dragon Rider"
+    description: "Ride a dragon"
     ingameid: "203"
     xlogfield: "tnntachieve3"
     bit: 10
 - model: scoreboard.achievement
   fields:
-    name: "They Like Shiny Things"
-    description: "Throw a gem at a unicorn"
+    name: "Shimmer"
+    description: "Erosionproof an item"
     ingameid: "204"
     xlogfield: "tnntachieve3"
     bit: 11
 - model: scoreboard.achievement
   fields:
-    name: "Buried Treasure"
-    description: "Dig up a grave not in a graveyard"
+    name: "They Like Shiny Things"
+    description: "Throw a gem at a unicorn"
     ingameid: "205"
     xlogfield: "tnntachieve3"
     bit: 12
 - model: scoreboard.achievement
   fields:
-    name: "Movers and Shakers"
-    description: "Cause an earthquake"
+    name: "Buried Treasure"
+    description: "Dig up a grave not in a graveyard"
     ingameid: "206"
     xlogfield: "tnntachieve3"
     bit: 13
 - model: scoreboard.achievement
   fields:
-    name: "Snake Charmer"
-    description: "Pacify a snake with a flute"
+    name: "Movers and Shakers"
+    description: "Cause an earthquake"
     ingameid: "207"
     xlogfield: "tnntachieve3"
     bit: 14
 - model: scoreboard.achievement
   fields:
-    name: "Right Back at Ya"
-    description: "Hit an enemy with an indirect strike from a thrown boomerang"
+    name: "Snake Charmer"
+    description: "Pacify a snake with a flute"
     ingameid: "208"
     xlogfield: "tnntachieve3"
     bit: 15
 - model: scoreboard.achievement
   fields:
-    name: "It Burnsss"
-    description: "Deal silver damage to a silver-hating monster"
+    name: "Right Back at Ya"
+    description: "Hit an enemy with an indirect strike from a thrown boomerang"
     ingameid: "209"
     xlogfield: "tnntachieve3"
     bit: 16
 - model: scoreboard.achievement
   fields:
-    name: "Arrakis"
-    description: "Make a crysknife"
+    name: "It Burnsss"
+    description: "Deal silver damage to a silver-hating monster"
     ingameid: "210"
     xlogfield: "tnntachieve3"
     bit: 17
 - model: scoreboard.achievement
   fields:
-    name: "Obligatory Pointy Hat"
-    description: "Put on a cornuthaum as a wizard"
+    name: "Arrakis"
+    description: "Make a crysknife"
     ingameid: "211"
     xlogfield: "tnntachieve3"
     bit: 18
 - model: scoreboard.achievement
   fields:
-    name: "Hobbit Skin"
-    description: "Wear a mithril coat"
+    name: "Obligatory Pointy Hat"
+    description: "Put on a cornuthaum as a wizard"
     ingameid: "212"
     xlogfield: "tnntachieve3"
     bit: 19
 - model: scoreboard.achievement
   fields:
-    name: "The Words of the Prophets"
-    description: "Read 3 random graffiti"
+    name: "Hobbit Skin"
+    description: "Wear a mithril coat"
     ingameid: "213"
     xlogfield: "tnntachieve3"
     bit: 20
 - model: scoreboard.achievement
   fields:
-    name: "Are You Still Pudding Farming"
-    description: "Split a pudding"
+    name: "The Words of the Prophets"
+    description: "Read 3 random graffiti"
     ingameid: "214"
     xlogfield: "tnntachieve3"
     bit: 21
 - model: scoreboard.achievement
   fields:
-    name: "Wearable Snack"
-    description: "Wear a meat ring"
+    name: "Are You Still Pudding Farming"
+    description: "Split a pudding"
     ingameid: "215"
     xlogfield: "tnntachieve3"
     bit: 22
 - model: scoreboard.achievement
   fields:
-    name: "Frozen Treats"
-    description: "Loot an ice box"
+    name: "Wearable Snack"
+    description: "Wear a meat ring"
     ingameid: "216"
     xlogfield: "tnntachieve3"
     bit: 23
 - model: scoreboard.achievement
   fields:
-    name: "Six Pack"
-    description: "Stock an ice box with 6 or more potions of booze"
+    name: "Frozen Treats"
+    description: "Loot an ice box"
     ingameid: "217"
     xlogfield: "tnntachieve3"
     bit: 24
 - model: scoreboard.achievement
   fields:
-    name: "Pygmalion"
-    description: "Create a monster from a figurine"
+    name: "Six Pack"
+    description: "Stock an ice box with 6 or more potions of booze"
     ingameid: "218"
     xlogfield: "tnntachieve3"
     bit: 25
 - model: scoreboard.achievement
   fields:
-    name: "Nerd"
-    description: "Read a spellbook while wearing lenses and a T-shirt"
+    name: "Pygmalion"
+    description: "Create a monster from a figurine"
     ingameid: "219"
     xlogfield: "tnntachieve3"
     bit: 26
 - model: scoreboard.achievement
   fields:
-    name: "Recharged"
-    description: "Charge an object"
+    name: "Nerd"
+    description: "Read a spellbook while wearing lenses and a T-shirt"
     ingameid: "220"
     xlogfield: "tnntachieve3"
     bit: 27
 - model: scoreboard.achievement
   fields:
-    name: "Get Your Kicks"
-    description: "Kick an item embedded in a wall or rock"
+    name: "Recharged"
+    description: "Charge an object"
     ingameid: "221"
     xlogfield: "tnntachieve3"
     bit: 28
 - model: scoreboard.achievement
   fields:
-    name: "Spiderman"
-    description: "Grab an item with a grappling hook"
+    name: "Get Your Kicks"
+    description: "Kick an item embedded in a wall or rock"
     ingameid: "222"
     xlogfield: "tnntachieve3"
     bit: 29
 - model: scoreboard.achievement
   fields:
-    name: "More Light"
-    description: "Refill the Candelabrum after it burns out after the Invocation"
+    name: "Spiderman"
+    description: "Grab an item with a grappling hook"
     ingameid: "223"
     xlogfield: "tnntachieve3"
     bit: 30
 - model: scoreboard.achievement
   fields:
-    name: "Fill 'Er Up"
-    description: "Fill an oil lamp with a potion of oil"
+    name: "More Light"
+    description: "Refill the Candelabrum after it burns out after the Invocation"
     ingameid: "224"
     xlogfield: "tnntachieve3"
     bit: 31
 - model: scoreboard.achievement
   fields:
-    name: "Chemistry 101"
-    description: "Alchemize two potions in an established recipe"
+    name: "Fill 'Er Up"
+    description: "Fill an oil lamp with a potion of oil"
     ingameid: "225"
     xlogfield: "tnntachieve3"
     bit: 32
 - model: scoreboard.achievement
   fields:
-    name: "Escape to Discworld"
-    description: "Read a Terry Pratchett novel"
+    name: "Chemistry 101"
+    description: "Alchemize two potions in an established recipe"
     ingameid: "226"
     xlogfield: "tnntachieve3"
     bit: 33
 - model: scoreboard.achievement
   fields:
-    name: "Near Death Experience"
-    description: "Chat with Death while carrying a Terry Pratchett novel"
+    name: "Escape to Discworld"
+    description: "Read a Terry Pratchett novel"
     ingameid: "227"
     xlogfield: "tnntachieve3"
     bit: 34
 - model: scoreboard.achievement
   fields:
-    name: "Prize Inside!"
-    description: "Get a spellbook by breaking a randomly-generated statue"
+    name: "Near Death Experience"
+    description: "Chat with Death while carrying a Terry Pratchett novel"
     ingameid: "228"
     xlogfield: "tnntachieve3"
     bit: 35
 - model: scoreboard.achievement
   fields:
-    name: "Ding-a-Ling"
-    description: "Summon a nymph by ringing a cursed bell"
+    name: "Prize Inside!"
+    description: "Get a spellbook by breaking a randomly-generated statue"
     ingameid: "229"
     xlogfield: "tnntachieve3"
     bit: 36
 - model: scoreboard.achievement
   fields:
-    name: "Diver Down"
-    description: "Dive into a moat or pool and retrieve an item from the bottom"
+    name: "Ding-a-Ling"
+    description: "Summon a nymph by ringing a cursed bell"
     ingameid: "230"
     xlogfield: "tnntachieve3"
     bit: 37
 - model: scoreboard.achievement
   fields:
-    name: "Ceiling Clinging Commute"
-    description: "Ride a wumpus over water"
+    name: "Diver Down"
+    description: "Dive into a moat or pool and retrieve an item from the bottom"
     ingameid: "231"
     xlogfield: "tnntachieve3"
     bit: 38
 - model: scoreboard.achievement
   fields:
-    name: "Collapse the Wavefunction"
-    description: "Open the box containing Schroedinger's Cat"
+    name: "Ceiling Clinging Commute"
+    description: "Ride a wumpus over water"
     ingameid: "232"
     xlogfield: "tnntachieve3"
     bit: 39
 - model: scoreboard.achievement
   fields:
-    name: "I'm Free! I'm Free!"
-    description: "Free a prisoner"
+    name: "Collapse the Wavefunction"
+    description: "Open the box containing Schroedinger's Cat"
     ingameid: "233"
     xlogfield: "tnntachieve3"
     bit: 40
 - model: scoreboard.achievement
   fields:
-    name: "Spam, Spam, Spam"
-    description: "Read a scroll of mail"
+    name: "I'm Free! I'm Free!"
+    description: "Free a prisoner"
     ingameid: "234"
     xlogfield: "tnntachieve3"
     bit: 41
 - model: scoreboard.achievement
   fields:
-    name: "Gender Swap"
-    description: "Put on an amulet of change"
+    name: "Spam, Spam, Spam"
+    description: "Read a scroll of mail"
     ingameid: "235"
     xlogfield: "tnntachieve3"
     bit: 42
 - model: scoreboard.achievement
   fields:
-    name: "Gender Bender"
-    description: "Change gender two or more times"
+    name: "Gender Swap"
+    description: "Put on an amulet of change"
     ingameid: "236"
     xlogfield: "tnntachieve3"
     bit: 43
 - model: scoreboard.achievement
   fields:
-    name: "Motherhood"
-    description: "Lay an egg"
+    name: "Gender Bender"
+    description: "Change gender two or more times"
     ingameid: "237"
     xlogfield: "tnntachieve3"
     bit: 44
 - model: scoreboard.achievement
   fields:
-    name: "Father Figure"
-    description: "Hatch an egg not laid by you and have it come out tame"
+    name: "Motherhood"
+    description: "Lay an egg"
     ingameid: "238"
     xlogfield: "tnntachieve3"
     bit: 45
 - model: scoreboard.achievement
   fields:
-    name: "Shafted"
-    description: "Fall down a shaft"
+    name: "Father Figure"
+    description: "Hatch an egg not laid by you and have it come out tame"
     ingameid: "239"
     xlogfield: "tnntachieve3"
     bit: 46
 - model: scoreboard.achievement
   fields:
-    name: "Horatius at the Bridge"
-    description: "Extinct soldiers or Keystone Kops"
+    name: "Shafted"
+    description: "Fall down a shaft"
     ingameid: "240"
     xlogfield: "tnntachieve3"
     bit: 47
 - model: scoreboard.achievement
   fields:
-    name: "Who's That Pretty Girl in the Mirror, There?"
-    description: "Deflect a nymph with a mirror"
+    name: "Horatius at the Bridge"
+    description: "Extinct soldiers or Keystone Kops"
     ingameid: "241"
     xlogfield: "tnntachieve3"
     bit: 48
 - model: scoreboard.achievement
   fields:
-    name: "Under New Management"
-    description: "Change your alignment by any means"
+    name: "Who's That Pretty Girl in the Mirror, There?"
+    description: "Deflect a nymph with a mirror"
     ingameid: "242"
     xlogfield: "tnntachieve3"
     bit: 49
 - model: scoreboard.achievement
   fields:
-    name: "Groundhog Day"
-    description: "Return to a forgotten level"
+    name: "Under New Management"
+    description: "Change your alignment by any means"
     ingameid: "243"
     xlogfield: "tnntachieve3"
     bit: 50
 - model: scoreboard.achievement
   fields:
-    name: "Tainted"
-    description: "Dip an item in unholy water"
+    name: "Groundhog Day"
+    description: "Return to a forgotten level"
     ingameid: "244"
     xlogfield: "tnntachieve3"
     bit: 51
 - model: scoreboard.achievement
   fields:
-    name: "Hydrochloric"
-    description: "Dissolve iron bars with acid"
+    name: "Tainted"
+    description: "Dip an item in unholy water"
     ingameid: "245"
     xlogfield: "tnntachieve3"
     bit: 52
 - model: scoreboard.achievement
   fields:
-    name: "Predictably, Nothing Happens"
-    description: "Break an identified wand of nothing"
+    name: "Hydrochloric"
+    description: "Dissolve iron bars with acid"
     ingameid: "246"
     xlogfield: "tnntachieve3"
     bit: 53
 - model: scoreboard.achievement
   fields:
-    name: "Wanton Waste"
-    description: "Break an identified wand of wishing with at least 1 charge"
+    name: "Predictably, Nothing Happens"
+    description: "Break an identified wand of nothing"
     ingameid: "247"
     xlogfield: "tnntachieve3"
     bit: 54
 - model: scoreboard.achievement
   fields:
-    name: "Neutralized"
-    description: "Cancel a monster"
+    name: "Wanton Waste"
+    description: "Break an identified wand of wishing with at least 1 charge"
     ingameid: "248"
     xlogfield: "tnntachieve3"
     bit: 55
 - model: scoreboard.achievement
   fields:
-    name: "Panacea"
-    description: "Neutralize a harmful potion with a unicorn horn"
+    name: "Neutralized"
+    description: "Cancel a monster"
     ingameid: "249"
     xlogfield: "tnntachieve3"
     bit: 56
 - model: scoreboard.achievement
   fields:
-    name: "Croesus Competitor"
-    description: "Finish a game carrying at least 50000 gold"
+    name: "Panacea"
+    description: "Neutralize a harmful potion with a unicorn horn"
     ingameid: "250"
     xlogfield: "tnntachieve3"
     bit: 57
 - model: scoreboard.achievement
   fields:
-    name: "Croesus Buyout"
-    description: "Finish a game carrying at least 100000 gold"
+    name: "Croesus Competitor"
+    description: "Finish a game carrying at least 50000 gold"
     ingameid: "251"
     xlogfield: "tnntachieve3"
     bit: 58
 - model: scoreboard.achievement
   fields:
-    name: "Palantir"
-    description: "Successfully apply a crystal ball"
+    name: "Croesus Buyout"
+    description: "Finish a game carrying at least 100000 gold"
     ingameid: "252"
     xlogfield: "tnntachieve3"
     bit: 59
 - model: scoreboard.achievement
   fields:
-    name: "Peak Condition"
-    description: "Raise all attributes to at least 18"
+    name: "Palantir"
+    description: "Successfully apply a crystal ball"
     ingameid: "253"
     xlogfield: "tnntachieve3"
     bit: 60
 - model: scoreboard.achievement
   fields:
-    name: "Replacement Goldfish"
-    description: "Cast create familiar"
+    name: "Peak Condition"
+    description: "Raise all attributes to at least 18"
     ingameid: "254"
     xlogfield: "tnntachieve3"
     bit: 61
 - model: scoreboard.achievement
   fields:
-    name: "Pop the Question"
-    description: "Give a ring of adornment to a succubus"
+    name: "Replacement Goldfish"
+    description: "Cast create familiar"
     ingameid: "255"
     xlogfield: "tnntachieve3"
     bit: 62
 - model: scoreboard.achievement
   fields:
-    name: "No Soup For You!"
-    description: "Get permanently expelled from the Quest"
+    name: "Pop the Question"
+    description: "Give a ring of adornment to a succubus"
     ingameid: "256"
     xlogfield: "tnntachieve3"
     bit: 63
 - model: scoreboard.achievement
   fields:
-    name: "Discerning Palate"
-    description: "Gain intrinsic food appraisal"
+    name: "No Soup For You!"
+    description: "Get permanently expelled from the Quest"
     ingameid: "257"
     xlogfield: "tnntachieve4"
     bit: 0
 - model: scoreboard.achievement
   fields:
-    name: "Banishing Spells Not Included"
-    description: "Summon a demon lord"
+    name: "Discerning Palate"
+    description: "Gain intrinsic food appraisal"
     ingameid: "258"
     xlogfield: "tnntachieve4"
     bit: 1
 - model: scoreboard.achievement
   fields:
-    name: "Dust to Dust"
-    description: "Wrest one last charge from a wand of wishing"
+    name: "Banishing Spells Not Included"
+    description: "Summon a demon lord"
     ingameid: "259"
     xlogfield: "tnntachieve4"
     bit: 2
 - model: scoreboard.achievement
   fields:
-    name: "Teetotaler"
-    description: "Neutralize a potion of booze with an amethyst"
+    name: "Dust to Dust"
+    description: "Wrest one last charge from a wand of wishing"
     ingameid: "260"
     xlogfield: "tnntachieve4"
     bit: 3
 - model: scoreboard.achievement
   fields:
-    name: "Spooky Scary Skeletons"
-    description: "Get scared by the rattling of a skeleton"
+    name: "Teetotaler"
+    description: "Neutralize a potion of booze with an amethyst"
     ingameid: "261"
     xlogfield: "tnntachieve4"
     bit: 4
 - model: scoreboard.achievement
   fields:
-    name: "Gullible"
-    description: "Get out of trouble by successfully lying to a vault guard"
+    name: "Spooky Scary Skeletons"
+    description: "Get scared by the rattling of a skeleton"
     ingameid: "262"
     xlogfield: "tnntachieve4"
     bit: 5
 - model: scoreboard.achievement
   fields:
-    name: "Luck of the Grasshopper"
-    description: "Reach +13 Luck"
+    name: "Gullible"
+    description: "Get out of trouble by successfully lying to a vault guard"
     ingameid: "263"
     xlogfield: "tnntachieve4"
     bit: 6
 - model: scoreboard.achievement
   fields:
-    name: "Murphy's Law"
-    description: "Reach -13 Luck"
+    name: "Luck of the Grasshopper"
+    description: "Reach +13 Luck"
     ingameid: "264"
     xlogfield: "tnntachieve4"
     bit: 7
 - model: scoreboard.achievement
   fields:
-    name: "Looking Slick"
-    description: "Grease a piece of armor"
+    name: "Murphy's Law"
+    description: "Reach -13 Luck"
     ingameid: "265"
     xlogfield: "tnntachieve4"
     bit: 8
 - model: scoreboard.achievement
   fields:
-    name: "The Deathly Hallows"
-    description: "Wield a wand of death while wearing an invisibility cloak and amulet of life saving"
+    name: "Looking Slick"
+    description: "Grease a piece of armor"
     ingameid: "266"
     xlogfield: "tnntachieve4"
     bit: 9
 - model: scoreboard.achievement
   fields:
-    name: "Indiana Jones"
-    description: "Disarm a monster with a bullwhip"
+    name: "The Deathly Hallows"
+    description: "Wield a wand of death while wearing an invisibility cloak and amulet of life saving"
     ingameid: "267"
     xlogfield: "tnntachieve4"
     bit: 10
 - model: scoreboard.achievement
   fields:
-    name: "Minesweeper"
-    description: "Disarm all land mines in Fort Ludios without blowing any up"
+    name: "Indiana Jones"
+    description: "Disarm a monster with a bullwhip"
     ingameid: "268"
     xlogfield: "tnntachieve4"
     bit: 11
 - model: scoreboard.achievement
   fields:
-    name: "007"
-    description: "Unlock something with a credit card"
+    name: "Minesweeper"
+    description: "Disarm all land mines in Fort Ludios without blowing any up"
     ingameid: "269"
     xlogfield: "tnntachieve4"
     bit: 12
 - model: scoreboard.achievement
   fields:
-    name: "Bob Ross"
-    description: "Release a picture-painting demon from a camera"
+    name: "007"
+    description: "Unlock something with a credit card"
     ingameid: "270"
     xlogfield: "tnntachieve4"
     bit: 13
 - model: scoreboard.achievement
   fields:
-    name: "Got No Talent"
-    description: "Scare something by playing music"
+    name: "Bob Ross"
+    description: "Release a picture-painting demon from a camera"
     ingameid: "271"
     xlogfield: "tnntachieve4"
     bit: 14
 - model: scoreboard.achievement
   fields:
-    name: "Cookie Monster"
-    description: "Read a fortune without eating its cookie"
+    name: "Got No Talent"
+    description: "Scare something by playing music"
     ingameid: "272"
     xlogfield: "tnntachieve4"
     bit: 15
 - model: scoreboard.achievement
   fields:
-    name: "Say Hello To My Evil Friend"
-    description: "Have a non-guaranteed demon lord gated in or summoned"
+    name: "Cookie Monster"
+    description: "Read a fortune without eating its cookie"
     ingameid: "273"
     xlogfield: "tnntachieve4"
     bit: 16
 - model: scoreboard.achievement
   fields:
-    name: "Make your Mark"
-    description: "Engrave with an athame"
+    name: "Say Hello To My Evil Friend"
+    description: "Have a non-guaranteed demon lord gated in or summoned"
     ingameid: "274"
     xlogfield: "tnntachieve4"
     bit: 17
 - model: scoreboard.achievement
   fields:
-    name: "One Hit KO"
-    description: "Deal a monster its maximum HP or more of damage (minimum 20)"
+    name: "Make your Mark"
+    description: "Engrave with an athame"
     ingameid: "275"
     xlogfield: "tnntachieve4"
     bit: 18
 - model: scoreboard.achievement
   fields:
-    name: "Drink It To The Next Level"
-    description: "Level up by drinking from a sink"
+    name: "One Hit KO"
+    description: "Deal a monster its maximum HP or more of damage (minimum 20)"
     ingameid: "276"
     xlogfield: "tnntachieve4"
     bit: 19
 - model: scoreboard.achievement
   fields:
-    name: "You're About To Die, You Scrub"
-    description: "Get a special message saying you're about to die, you scrub"
+    name: "Drink It To The Next Level"
+    description: "Level up by drinking from a sink"
     ingameid: "277"
     xlogfield: "tnntachieve4"
     bit: 20
 - model: scoreboard.achievement
   fields:
-    name: "Extinctionist Lite"
-    description: "Perform genocide 5 or more times"
+    name: "You're About To Die, You Scrub"
+    description: "Get a special message saying you're about to die, you scrub"
     ingameid: "278"
     xlogfield: "tnntachieve4"
     bit: 21
 - model: scoreboard.achievement
   fields:
-    name: "Dudley's Hero"
-    description: "Extinct newts"
+    name: "Extinctionist Lite"
+    description: "Perform genocide 5 or more times"
     ingameid: "279"
     xlogfield: "tnntachieve4"
     bit: 22
 - model: scoreboard.achievement
   fields:
-    name: "Ice Jesus"
-    description: "Walk on top of lava unharmed"
+    name: "Dudley's Hero"
+    description: "Extinct newts"
     ingameid: "280"
     xlogfield: "tnntachieve4"
     bit: 23
 - model: scoreboard.achievement
   fields:
-    name: "Rare Loot"
-    description: "Acquire an athame that was generated in the inventory of a lich"
+    name: "Ice Jesus"
+    description: "Walk on top of lava unharmed"
     ingameid: "281"
     xlogfield: "tnntachieve4"
     bit: 24
 - model: scoreboard.achievement
   fields:
-    name: "Boy Scout"
-    description: "Complete Sokoban without incurring any penalties for rule-breaking"
+    name: "Rare Loot"
+    description: "Acquire an athame that was generated in the inventory of a lich"
     ingameid: "282"
     xlogfield: "tnntachieve4"
     bit: 25
 - model: scoreboard.achievement
   fields:
-    name: "Sounds Hollow"
-    description: "Reveal a secret door with a stethoscope"
+    name: "Boy Scout"
+    description: "Complete Sokoban without incurring any penalties for rule-breaking"
     ingameid: "283"
     xlogfield: "tnntachieve4"
     bit: 26
 - model: scoreboard.achievement
   fields:
-    name: "Unorthodox Exit"
-    description: "Reach the Planes via quaffing"
+    name: "Sounds Hollow"
+    description: "Reveal a secret door with a stethoscope"
     ingameid: "284"
     xlogfield: "tnntachieve4"
     bit: 27
 - model: scoreboard.achievement
   fields:
-    name: "Paddling Pool"
-    description: "Create pools from a fountain"
+    name: "Unorthodox Exit"
+    description: "Reach the Planes via quaffing"
     ingameid: "285"
     xlogfield: "tnntachieve4"
     bit: 28
 - model: scoreboard.achievement
   fields:
-    name: "Practical Joke"
-    description: "Have a tin blow up in your face"
+    name: "Paddling Pool"
+    description: "Create pools from a fountain"
     ingameid: "286"
     xlogfield: "tnntachieve4"
     bit: 29
 - model: scoreboard.achievement
   fields:
-    name: "Amon Hen"
-    description: "Get either of the two \"vision\" effects from sitting on a throne"
+    name: "Practical Joke"
+    description: "Have a tin blow up in your face"
     ingameid: "287"
     xlogfield: "tnntachieve4"
     bit: 30
 - model: scoreboard.achievement
   fields:
-    name: "Detonator"
-    description: "Explode a large box or chest"
+    name: "Amon Hen"
+    description: "Get either of the two \"vision\" effects from sitting on a throne"
     ingameid: "288"
     xlogfield: "tnntachieve4"
     bit: 31
 - model: scoreboard.achievement
   fields:
-    name: "Lightbringer"
-    description: "Light up at least 20 dark rooms in the Dungeons of Doom"
+    name: "Detonator"
+    description: "Explode a large box or chest"
     ingameid: "289"
     xlogfield: "tnntachieve4"
     bit: 32
 - model: scoreboard.achievement
   fields:
-    name: "Cosmic Bungee Cord"
-    description: "Get sent back a total of 15 or more levels by the mysterious force"
+    name: "Lightbringer"
+    description: "Light up at least 20 dark rooms in the Dungeons of Doom"
     ingameid: "290"
     xlogfield: "tnntachieve4"
     bit: 33
 - model: scoreboard.achievement
   fields:
-    name: "No Rulez"
-    description: "Remove all watchmen from Minetown"
+    name: "Cosmic Bungee Cord"
+    description: "Get sent back a total of 15 or more levels by the mysterious force"
     ingameid: "291"
     xlogfield: "tnntachieve4"
     bit: 34
 - model: scoreboard.achievement
   fields:
-    name: "Packing Light"
-    description: "Successfully store a bag of holding inside another bag of holding"
+    name: "No Rulez"
+    description: "Remove all watchmen from Minetown"
     ingameid: "292"
     xlogfield: "tnntachieve4"
     bit: 35
 - model: scoreboard.achievement
   fields:
-    name: "Shoo Off"
-    description: "Make a monster of difficulty 5 or more escape the dungeon"
+    name: "Packing Light"
+    description: "Successfully store a bag of holding inside another bag of holding"
     ingameid: "293"
     xlogfield: "tnntachieve4"
     bit: 36
 - model: scoreboard.achievement
   fields:
-    name: "What Have I Unleashed"
-    description: "Make a demon lord escape the dungeon"
+    name: "Shoo Off"
+    description: "Make a monster of difficulty 5 or more escape the dungeon"
     ingameid: "294"
     xlogfield: "tnntachieve4"
     bit: 37
 - model: scoreboard.achievement
   fields:
-    name: "Walking Bullseye"
-    description: "Have +30 AC"
+    name: "What Have I Unleashed"
+    description: "Make a demon lord escape the dungeon"
     ingameid: "295"
     xlogfield: "tnntachieve4"
     bit: 38
 - model: scoreboard.achievement
   fields:
-    name: "Tanking It"
-    description: "Have -50 AC"
+    name: "Walking Bullseye"
+    description: "Have +30 AC"
     ingameid: "296"
     xlogfield: "tnntachieve4"
     bit: 39
 - model: scoreboard.achievement
   fields:
-    name: "Doorstopper"
-    description: "Have a door resist 8 consecutive times when trying to open or close it"
+    name: "Tanking It"
+    description: "Have -50 AC"
     ingameid: "297"
     xlogfield: "tnntachieve4"
     bit: 40
 - model: scoreboard.achievement
   fields:
-    name: "Practically Permanent"
-    description: "Have more than 10,000 turns of a temporary intrinsic"
+    name: "Doorstopper"
+    description: "Have a door resist 8 consecutive times when trying to open or close it"
     ingameid: "298"
     xlogfield: "tnntachieve4"
     bit: 41
 - model: scoreboard.achievement
   fields:
-    name: "This One Goes To +8"
-    description: "Successfully enchant a weapon to +8 or higher"
+    name: "Practically Permanent"
+    description: "Have more than 10,000 turns of a temporary intrinsic"
     ingameid: "299"
     xlogfield: "tnntachieve4"
     bit: 42
 - model: scoreboard.achievement
   fields:
-    name: "Glowy Blue Upgrade"
-    description: "Successfully increase the enchantment on your weapon"
+    name: "This One Goes To +8"
+    description: "Successfully enchant a weapon to +8 or higher"
     ingameid: "300"
     xlogfield: "tnntachieve4"
     bit: 43
 - model: scoreboard.achievement
   fields:
-    name: "Blasters' Handbook"
-    description: "Blow up a boulder with a land mine"
+    name: "Glowy Blue Upgrade"
+    description: "Successfully increase the enchantment on your weapon"
     ingameid: "301"
     xlogfield: "tnntachieve4"
     bit: 44
 - model: scoreboard.achievement
   fields:
-    name: "Loew Life"
-    description: "Create a golem from a pile of objects"
+    name: "Blasters' Handbook"
+    description: "Blow up a boulder with a land mine"
     ingameid: "302"
     xlogfield: "tnntachieve4"
     bit: 45
 - model: scoreboard.achievement
   fields:
-    name: "Never Tell Me the Odds"
-    description: "Successfully cast a spell with a failure rate of 95% or greater"
+    name: "Loew Life"
+    description: "Create a golem from a pile of objects"
     ingameid: "303"
     xlogfield: "tnntachieve4"
     bit: 46
 - model: scoreboard.achievement
   fields:
-    name: "Archmage"
-    description: "Successfully cast a level 7 spell"
+    name: "Never Tell Me the Odds"
+    description: "Successfully cast a spell with a failure rate of 95% or greater"
     ingameid: "304"
     xlogfield: "tnntachieve4"
     bit: 47
 - model: scoreboard.achievement
   fields:
-    name: "Leeroy Jenkins"
-    description: "Cross the Castle drawbridge threshold within 30 turns of entering the level"
+    name: "Archmage"
+    description: "Successfully cast a level 7 spell"
     ingameid: "305"
     xlogfield: "tnntachieve4"
     bit: 48
 - model: scoreboard.achievement
   fields:
-    name: "Chocoban"
-    description: "Acquire a candy bar generated in Sokoban"
+    name: "Leeroy Jenkins"
+    description: "Cross the Castle drawbridge threshold within 30 turns of entering the level"
     ingameid: "306"
     xlogfield: "tnntachieve4"
     bit: 49
 - model: scoreboard.achievement
   fields:
-    name: "Thirst For Punishment"
-    description: "Drink all harmful types of potion (conf, blind, paral, hallu, sleep, booze, sick, acid)"
+    name: "Chocoban"
+    description: "Acquire a candy bar generated in Sokoban"
     ingameid: "307"
     xlogfield: "tnntachieve4"
     bit: 50
+- model: scoreboard.achievement
+  fields:
+    name: "Thirst For Punishment"
+    description: "Drink all harmful types of potion (conf, blind, paral, hallu, sleep, booze, sick, acid)"
+    ingameid: "308"
+    xlogfield: "tnntachieve4"
+    bit: 51
+- model: scoreboard.achievement
+  fields:
+    name: "The Full Elven"
+    description: "Deck yourself out in 5 pieces of +7 elven armor, then wield a +7 elven weapon"
+    ingameid: "309"
+    xlogfield: "tnntachieve4"
+    bit: 52
+- model: scoreboard.achievement
+  fields:
+    name: "Drained and Regained"
+    description: "Restore at least 3 lost levels with a single potion"
+    ingameid: "310"
+    xlogfield: "tnntachieve4"
+    bit: 53
