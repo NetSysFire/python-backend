@@ -6,3 +6,4 @@ env/*
 xlog/*
 *.log
 .idea
+tags
