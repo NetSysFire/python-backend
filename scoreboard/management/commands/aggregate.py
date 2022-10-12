@@ -4,6 +4,8 @@ from scoreboard.parsers import XlogParser
 from django.db import transaction
 from django.db.models import Sum, Min, Max, Count
 from tnnt import uniqdeaths
+from pathlib import Path
+import os
 import urllib
 import logging
 
@@ -12,7 +14,8 @@ logger = logging.getLogger() # root logger
 # Optimizations: these don't change over the lifetime of the tournament. Run
 # these queries once when this module is loaded so that they don't have to be
 # hit multiple times in loops.
-TOTAL_ACHIEVEMENTS = Achievement.objects.count()
+ALL_ACHIEVEMENTS = list(Achievement.objects.all())
+TOTAL_ACHIEVEMENTS = len(ALL_ACHIEVEMENTS)
 TOTAL_CONDUCTS = Conduct.objects.count()
 TROPHIES = { tr.name: tr for tr in Trophy.objects.all() }
 
@@ -74,6 +77,63 @@ great_lesser_role = {
         'req_race_algn': set(['Hum-Neu','Gno-Neu','Hum-Cha','Elf-Cha','Orc-Cha'])
     },
 }
+
+# Gather temporary achievements. This only needs to happen once per aggregation
+# and should happen BEFORE any aggregating is done.
+# Input: files in TEMP_ACHIEVEMENTS_PATH
+# Output: structure like
+# {
+#   'player1': [ 1, 66, 123, ... ]
+#   'player2': [ ... ]
+# }
+# where the numbers are the ids of Achievements.
+TEMP_ACHIEVEMENTS = {}
+@transaction.atomic
+def obtainTempAchievements():
+    try:
+        from tnnt.settings import TEMP_ACHIEVEMENTS_PATH
+    except ImportError:
+        # having no TEMP_ACHIEVEMENTS_PATH in settings indicates you don't want
+        # to show these
+        return
+    filelist = os.listdir(Path(TEMP_ACHIEVEMENTS_PATH))
+
+    # Unconditionally wipe all temporary achievements from everyone. If someone
+    # still has some from the same game in progress, the file will still be
+    # there and we'll read it in after this.
+    for p in Player.objects.all():
+        p.temp_achievements.clear()
+        p.save()
+
+    for fname in filelist:
+        plname = fname.split('.')[0]
+        try:
+            player = Player.objects.get(name=plname)
+        except Player.DoesNotExist:
+            # If there is a player who appears here but does not exist in the
+            # database, that's fine - they may not have completed their first
+            # game yet or logged in on the site. Ignore them.
+            print('Ignoring', fname, '- nonexistent player')
+            continue
+
+        # wipe any existing temporary achievements of theirs
+        player.temp_achievements.clear()
+
+        print(ALL_ACHIEVEMENTS[181].xlogfield)
+        with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
+            lines = file.readlines()
+            # create a dict of { achieve: <achieve bits>, tnntachieve0: <achieve bits>, ... }
+            # Assumption: file contents have first line of achieve bits, then
+            # subsequent lines are tnntachieve0, tnntachieve1, ...
+            achdict = { 'achieve': int(lines[0], 16) }
+            tnntachieveX = 0
+            for L in lines[1:]:
+                achdict['tnntachieve' + str(tnntachieveX)] = int(L, 16)
+                tnntachieveX += 1
+            for ach in ALL_ACHIEVEMENTS:
+                if achdict[ach.xlogfield] & (1 << ach.bit):
+                    player.temp_achievements.add(ach)
+
 
 # Determine and award trophies to a player or clan.
 # ASSUMPTION: The player's LeaderboardBaseFields are already computed.
@@ -344,12 +404,15 @@ class Command(BaseCommand):
     # be called on clan-membership-change events, subject to design discussion
     # on if that is a sound idea
     def handle(self, *args, **options):
+        obtainTempAchievements()
         # This will end up doing a bunch of writes. Force them to happen all at
         # once with atomic().
         # If this is not done, someone could load a page when e.g. Player writes
         # have gone through but Clan writes have not, and wonder why the person
         # with the new best realtime game doesn't have their clan at the top of
         # the leaderboard. Or any of several similar problems.
+        # Temp achievements are done separately because they exist independently
+        # from this more important stuff.
         with transaction.atomic():
             aggregatePlayerData()
             aggregateClanData()

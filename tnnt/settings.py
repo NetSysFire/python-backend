@@ -177,6 +177,10 @@ AUTHENTICATION_BACKENDS = [
 DGL_DATABASE_PATH = './dgamelaunch_test.db'
 # DGL_DATABASE_PATH = '/opt/nethack/chroot/dgldir/dgamelaunch.db'
 
+# Path to where TNNT is writing temp achievement files
+# If you don't want to show temp achievements, leave this uncommented
+#TEMP_ACHIEVEMENTS_PATH = '/path/to/tnnt/temp_achievements'
+
 # Clan size limit
 
 MAX_CLAN_PLAYERS = 12

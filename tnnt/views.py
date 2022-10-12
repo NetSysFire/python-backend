@@ -321,7 +321,14 @@ class SinglePlayerOrClanView(TemplateView):
 
         # a little subquerying for achievements...
         gameswith_ach = base_game_qs.filter(achievements__pk=OuterRef('pk'))
-        achievements = Achievement.objects.annotate(obtained=Exists(gameswith_ach))
+        ach_annotate_kwargs = { 'obtained': Exists(gameswith_ach) }
+        if kwargs['isClan']:
+            ach_annotate_kwargs['has_in_current_game'] = \
+                Exists(Player.objects.filter(clan=clan, temp_achievements__pk=OuterRef('pk')))
+        else:
+            ach_annotate_kwargs['has_in_current_game'] = \
+                Exists(player.temp_achievements.filter(pk=OuterRef('pk')))
+        achievements = Achievement.objects.annotate(**ach_annotate_kwargs)
         kwargs['achievements'] = achievements
 
         return kwargs

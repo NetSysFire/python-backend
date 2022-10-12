@@ -174,9 +174,11 @@
       {% for ach in achievements %}
         <tr id="achievement-{{ ach.ingameid }}">
           {% if ach.obtained %}
-            <td class="achieved">&check;</td>
+            <td class="achieved">&#10004;</td>
+          {% elif ach.has_in_current_game %}
+            <td class="sorta-achieved">&#10070;</td>
           {% else %}
-            <td class="not-achieved">&cross;</td>
+            <td class="not-achieved">&#10008;</td>
           {% endif %}
           <td class="ach-id">#{{ ach.ingameid }}</td>
           <td class="ach-name">{{ ach.name }}</td>

@@ -233,6 +233,11 @@ div.achieve-top table tbody tr:last-child {
   font-weight: 900;
 }
 
+.sorta-achieved {
+  color: yellow;
+  font-weight: 900;
+}
+
 .not-achieved {
   color: red;
   font-weight: 900;

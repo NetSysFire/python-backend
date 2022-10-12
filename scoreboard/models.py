@@ -107,6 +107,11 @@ class Player(LeaderboardBaseFields):
     invites    = models.ManyToManyField(Clan, related_name='invitees')
     # link to User model for web logins
     user       = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
+    # Achievements that this player has earned in a game in progress, which will
+    # not have a Game entry in the database yet because it doesn't go into the
+    # xlogfile until it's finished.
+    # Populated during aggregation.
+    temp_achievements = models.ManyToManyField(Achievement)
 
     # Compute this player's streaks, and return them as a list of Streaks
     # containing the games in the streak and whether they can be continued.
