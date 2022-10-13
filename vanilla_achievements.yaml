@@ -51,7 +51,7 @@
     name: From the Dungeon they Came
     description: Enter the Elemental Planes
     ingameid: V07
-    define: A_GOT_AOFY
+    define: A_ENTERED_PLANES
     xlogfield: achieve
     bit: 6
 - model: scoreboard.achievement
@@ -69,7 +69,7 @@
     name: Are You Feeling Lucky
     description: Get the luckstone from Mines' End
     ingameid: V09
-    define: A_ENTERED_ASTRAL
+    define: A_GOT_LUCKSTONE
     xlogfield: achieve
     bit: 9
 - model: scoreboard.achievement
