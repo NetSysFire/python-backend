@@ -3,6 +3,7 @@
     name: Ringing in My Ears
     description: Get the Bell of Opening
     ingameid: V01
+    define: A_GOT_BELL
     xlogfield: achieve
     bit: 0
 - model: scoreboard.achievement
@@ -10,6 +11,7 @@
     name: Feel the Burn
     description: Enter Gehennom
     ingameid: V02
+    define: A_ENTERED_GEHENNOM
     xlogfield: achieve
     bit: 1
 - model: scoreboard.achievement
@@ -17,6 +19,7 @@
     name: Emerging Into the Light
     description: Get the Candelabrum of Invocation
     ingameid: V03
+    define: A_GOT_CANDLE
     xlogfield: achieve
     bit: 2
 - model: scoreboard.achievement
@@ -24,6 +27,7 @@
     name: Weighing of the Heart
     description: Get the Book of the Dead
     ingameid: V04
+    define: A_GOT_BOOK
     xlogfield: achieve
     bit: 3
 - model: scoreboard.achievement
@@ -31,6 +35,7 @@
     name: Bell, Book and Candle
     description: Perform the invocation ritual
     ingameid: V05
+    define: A_DID_INVOCATION
     xlogfield: achieve
     bit: 4
 - model: scoreboard.achievement
@@ -38,6 +43,7 @@
     name: My Preciousss
     description: Get the Amulet of Yendor
     ingameid: V06
+    define: A_GOT_AOY
     xlogfield: achieve
     bit: 5
 - model: scoreboard.achievement
@@ -45,6 +51,7 @@
     name: From the Dungeon they Came
     description: Enter the Elemental Planes
     ingameid: V07
+    define: A_GOT_AOFY
     xlogfield: achieve
     bit: 6
 - model: scoreboard.achievement
@@ -52,6 +59,7 @@
     name: The Halls of the Gods
     description: Enter the Astral Plane
     ingameid: V08
+    define: A_ENTERED_ASTRAL
     xlogfield: achieve
     bit: 7
 # note: bit 8, 0x100, is used for "u.uachieve.ascended". We don't track this as
@@ -60,20 +68,23 @@
   fields:
     name: Are You Feeling Lucky
     description: Get the luckstone from Mines' End
-    ingameid: V10
+    ingameid: V09
+    define: A_ENTERED_ASTRAL
     xlogfield: achieve
     bit: 9
 - model: scoreboard.achievement
   fields:
     name: Boulder Pusher
     description: Finish Sokoban
-    ingameid: V11
+    ingameid: V10
+    define: A_DID_SOKOBAN
     xlogfield: achieve
     bit: 10
 - model: scoreboard.achievement
   fields:
     name: Anti-Stoner
     description: Kill Medusa
-    ingameid: V12
+    ingameid: V11
+    define: A_KILLED_MEDUSA
     xlogfield: achieve
     bit: 11

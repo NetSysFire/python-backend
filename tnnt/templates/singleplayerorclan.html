@@ -172,7 +172,7 @@
     </thead>
     <tbody>
       {% for ach in achievements %}
-        <tr id="achievement-{{ ach.ingameid }}">
+        <tr id="{{ ach.define }}">
           {% if ach.obtained %}
             <td class="achieved">&#10004;</td>
           {% elif ach.has_in_current_game %}

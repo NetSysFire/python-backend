@@ -24,7 +24,7 @@
   </thead>
   <tbody>
     {% for ach in achievements %}
-      <tr id="achievement-{{ ach.ingameid }}">
+      <tr id="{{ ach.define }}">
         <td class="ach-id">#{{ ach.ingameid }}</td>
         <td class="ach-name">{{ ach.name }}</td>
         <td class="ach-desc">{{ ach.description }}</td>

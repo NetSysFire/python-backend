@@ -33,6 +33,7 @@ class Achievement(models.Model):
     name        = models.CharField(max_length=128)
     description = models.CharField(max_length=256)
     ingameid    = models.CharField(max_length=8)
+    define      = models.CharField(max_length=32)
 
     # the xlog field name this achievement is encoded with
     # "achieve", "tnntachieveX", etc

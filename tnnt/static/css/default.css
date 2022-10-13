@@ -220,9 +220,7 @@ div.achieve-top table tbody tr:last-child {
 }
 
 /* small caps for Near Death Experience */
-/* FIXME: this points to the wrong achievement every time a renumbering of the
- * list affects Near Death Experience :( */
-#achievement-228 .ach-name {
+#A_TALKED_TO_DEATH .ach-name {
   font-variant: small-caps;
 }
 
