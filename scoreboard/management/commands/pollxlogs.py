@@ -141,7 +141,7 @@ class Command(BaseCommand):
         sources = Source.objects.all()
         if len(sources) == 0:
             raise RuntimeError('There are no sources in the database to poll!')
-        if 'file' in options:
+        if options.get('file') is not None:
             import_from_file(options['file'], None)
         else:
             for src in sources:
