@@ -13,6 +13,11 @@ SIMPLE_XLOG_FIELDS = ['version', 'role', 'race', 'gender', 'align', 'points',
                       'turns', 'maxlvl', 'death', 'align0', 'gender0',
                       'deathlev']
 
+class xlog_flags:
+    WIZARD  = 0x1
+    EXPLORE = 0x2
+    NOBONES = 0x4
+
 def game_from_xlog(source, xlog_dict):
     '''
     Create and save a Game from a dictionary of fields that comes from the xlog.
@@ -32,11 +37,10 @@ def game_from_xlog(source, xlog_dict):
     kwargs = {'source': source}
 
     # filter explore/wizmode games
-    # post 2021 TODO: do something about magic numbers in this method
-    if xlog_dict['flags'] & 0x1:
+    if xlog_dict['flags'] & xlog_flags.WIZARD:
         print('Game not parsed because it was in wizard mode', file=sys.stderr)
         return 0
-    if xlog_dict['flags'] & 0x2:
+    if xlog_dict['flags'] & xlog_flags.EXPLORE:
         print('Game not parsed because it was in explore mode', file=sys.stderr)
         return 0
 
