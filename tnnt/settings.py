@@ -179,7 +179,7 @@ DGL_DATABASE_PATH = './dgamelaunch_test.db'
 
 # Path to where TNNT is writing temp achievement files
 # If you don't want to show temp achievements, leave this uncommented
-#TEMP_ACHIEVEMENTS_PATH = '/path/to/tnnt/temp_achievements'
+# TEMP_ACHIEVEMENTS_PATH = '/opt/nethack/chroot/tnnt/temp_achievements'
 
 # Clan size limit
 
