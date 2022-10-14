@@ -5,6 +5,7 @@ from scoreboard.parsers import XlogParser
 from tnnt import settings
 from pathlib import Path
 import requests
+import sys
 from datetime import datetime, timedelta, timezone
 
 # xlogfile fields that have the same name in the Game model.
@@ -32,9 +33,11 @@ def game_from_xlog(source, xlog_dict):
 
     # filter explore/wizmode games
     # post 2021 TODO: do something about magic numbers in this method
-    if xlog_dict['flags'] & 0x1 or xlog_dict['flags'] & 0x2:
-        print('Game not parsed because it was in wizard or explore mode',
-              file=sys.stderr)
+    if xlog_dict['flags'] & 0x1:
+        print('Game not parsed because it was in wizard mode', file=sys.stderr)
+        return 0
+    if xlog_dict['flags'] & 0x2:
+        print('Game not parsed because it was in explore mode', file=sys.stderr)
         return 0
 
     # time/duration information
@@ -42,10 +45,13 @@ def game_from_xlog(source, xlog_dict):
     # outside the time window of the tournament
     kwargs['starttime'] = datetime.fromtimestamp(xlog_dict['starttime'], timezone.utc)
     kwargs['endtime'] = datetime.fromtimestamp(xlog_dict['endtime'], timezone.utc)
-    if (kwargs['starttime'] < settings.TOURNAMENT_START
-        or kwargs['endtime'] > settings.TOURNAMENT_END):
-        print('Game not parsed because it was outside tournament time',
-              file=sys.stderr)
+    if kwargs['starttime'] < settings.TOURNAMENT_START:
+        print('Game not parsed because it started before tournament start:',
+              kwargs['starttime'], file=sys.stderr)
+        return 0
+    if kwargs['endtime'] > settings.TOURNAMENT_END:
+        print('Game not parsed because it ended after tournament end:',
+              kwargs['endtime'], file=sys.stderr)
         return 0
     kwargs['realtime'] = timedelta(seconds=xlog_dict['realtime'])
     kwargs['wallclock'] = kwargs['endtime'] - kwargs['starttime']
