@@ -37,6 +37,32 @@ def bulk_upd_games(gamelist):
 
     return gamelist
 
+# Attempt to get the player linked with this user ID. Contains some
+# checks against weird edge cases.
+# Argument is request.user from an HTTP request.
+# If we seriously can't find a player, raise Player.DoesNotExist; the
+# expectation is that the caller will return an appropriate error (500)
+# to the browser.
+def get_player(request_user):
+    try:
+        return Player.objects.get(user=request_user.id)
+    except Player.DoesNotExist:
+        logger.warning('No Player found linked to logged-in user (id %s, name %s)',
+                       request_user.id, request_user)
+        try:
+            # ok THIS shouldn't fail... we really shouldn't have allowed a
+            # user to exist without a Player of corresponding name
+            player = Player.objects.get(name=request_user)
+            player.user = request_user
+            player.save()
+            logger.warning('Fell back on linking to existing Player named %s',
+                           request_user)
+            return player
+        except Player.DoesNotExist as e:
+            logger.error('No Player found with name of logged in user (name %s)',
+                         request_user)
+            raise e
+
 class HomepageView(TemplateView):
     template_name = 'index.html'
 
@@ -227,6 +253,13 @@ class LeaderboardsView(TemplateView):
             L['clans'] = gen_leader_list(winclans if L['wins_only'] else allclans,
                                          L['stat'] if 'stat' in L else L['id'],
                                          L['descending'])
+        try:
+            kwargs['myname'] = get_player(self.request.user).name
+        except:
+            # don't do anything if no player found, since you can view
+            # leaderboards when not logged in
+            pass
+
         kwargs['leaderboards'] = leaderboards
         return kwargs
 
@@ -386,37 +419,11 @@ class AchievementsView(TemplateView):
 class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
-    def get_player(self, request_user):
-        # Attempt to get the player linked with this user ID. Contains some
-        # checks against weird edge cases.
-        # Argument is request.user from an HTTP request.
-        # If we seriously can't find a player, raise Player.DoesNotExist; the
-        # expectation is that the caller will return an appropriate error (500)
-        # to the browser.
-        try:
-            return Player.objects.get(user=request_user.id)
-        except Player.DoesNotExist:
-            logger.warning('No Player found linked to logged-in user (id %s, name %s)',
-                           request_user.id, request_user)
-            try:
-                # ok THIS shouldn't fail... we really shouldn't have allowed a
-                # user to exist without a Player of corresponding name
-                player = Player.objects.get(name=request_user)
-                player.user = request_user
-                player.save()
-                logger.warning('Fell back on linking to existing Player named %s',
-                               request_user)
-                return player
-            except Player.DoesNotExist as e:
-                logger.error('No Player found with name of logged in user (name %s)',
-                             request_user)
-                raise e
-
     def get_context_data(self, **kwargs):
         user = self.request.user
         # we assume the player is already known to exist since both get() and
         # post() check for it
-        player = self.get_player(user)
+        player = get_player(user)
 
         kwargs['me'] = player
         kwargs['clan'] = None
@@ -446,7 +453,7 @@ class ClanMgmtView(View):
         # post 2021 TODO: This case is duplicated from the POST below. Ideally they should
         # be unified.
         try:
-            self.get_player(request.user)
+            get_player(request.user)
         except Player.DoesNotExist:
             return HttpResponse(status=500)
 
@@ -464,7 +471,7 @@ class ClanMgmtView(View):
         # if we passed the auth test above then this shouldn't fail...
         # but it could if the Player db is wiped without the auth.user db being wiped.
         try:
-            player = self.get_player(request.user)
+            player = get_player(request.user)
         except Player.DoesNotExist:
             return HttpResponse(status=500)
         ctx = {}

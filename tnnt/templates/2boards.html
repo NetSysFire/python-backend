@@ -28,7 +28,13 @@
           {% endcomment %}
           <tr>
             <td class="num dim">{{ forloop.counter }}</td>
-            <td>{% include "plink.html" with name=player.name %}</td>
+            <td>
+              {% if myname == player.name %}
+                <b>{% include "plink.html" with name=player.name %}</b>
+              {% else %}
+                {% include "plink.html" with name=player.name %}
+              {% endif %}
+            </td>
             <td>
               {% if "clan" in player %}
                 {% include "clink.html" with name=player.clan %}
