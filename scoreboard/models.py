@@ -62,6 +62,9 @@ class LeaderboardBaseFields(models.Model):
     total_games            = models.IntegerField(default=0)
     wins                   = models.IntegerField(default=0)
     splats                 = models.IntegerField(default=0)
+    # donations is not total number of things put into the swap chest, but total
+    # number of things put in that someone else took out
+    donations              = models.IntegerField(default=0)
     lowest_turncount_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     fastest_realtime_asc   = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     max_conducts_asc       = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')

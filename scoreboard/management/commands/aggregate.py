@@ -8,6 +8,7 @@ from pathlib import Path
 import os
 import urllib
 import logging
+import requests
 
 logger = logging.getLogger() # root logger
 
@@ -77,6 +78,49 @@ great_lesser_role = {
         'req_race_algn': set(['Hum-Neu','Gno-Neu','Hum-Cha','Elf-Cha','Orc-Cha'])
     },
 }
+
+@transaction.atomic
+def populateDonors():
+    from tnnt.settings import DONOR_FILES
+
+    # first wipe all donation credits from players, since we will be reading the
+    # donor files from scratch
+    for p in Player.objects.all():
+        p.donations = 0
+        p.save()
+
+    # Up to K2 whether it is better in the long run to request these files via
+    # HTTP or sync them over to the webserver and read them locally.
+    for url in DONOR_FILES:
+        r = requests.get(url, stream=True)
+        if r.status_code != 200:
+            logger.error('Could not fetch donor file %s - %s' % (url, str(r)))
+            continue
+        else:
+            for line in r.iter_lines():
+                plname = line.decode()
+                try:
+                    player = Player.objects.get(name=plname)
+                except Player.DoesNotExist:
+                    # It is possible for there to be a donor for which a Player
+                    # doesn't exist yet, specifically in their first game if
+                    # they HAVE NOT logged into the site yet but HAVE put items
+                    # into the swap chest, and someone else has already removed
+                    # those items. Like in the temporary achievements case, we
+                    # ignore this until a later update in which the Player does
+                    # exist.
+                    #
+                    # NOTE: If this is changed later such that it doesn't pull
+                    # the entire donor file fresh every time, instead using an
+                    # xlogfile-like system of storing the file position, then
+                    # this WILL lose donors from such cases and SHOULD be
+                    # updated to create Players if they don't already exist.
+                    # Currently I don't think an xlogfile-like system is needed
+                    # here.
+                    logger.warning('Ignoring nonexistent donor %s' % (plname))
+                    continue
+                player.donations += 1
+                player.save()
 
 # Gather temporary achievements. This only needs to happen once per aggregation
 # and should happen BEFORE any aggregating is done.
@@ -313,12 +357,14 @@ def aggregateClanData():
                                          Sum('wins'),
                                          Sum('games_over_1000_turns'),
                                          Sum('games_scummed'),
-                                         Max('longest_streak'))
+                                         Max('longest_streak'),
+                                         Sum('donations'))
         clan.total_games = aggrs_dict['total_games__sum']
         clan.wins = aggrs_dict['wins__sum']
         clan.games_over_1000_turns = aggrs_dict['games_over_1000_turns__sum']
         clan.games_scummed = aggrs_dict['games_scummed__sum']
         clan.longest_streak = aggrs_dict['longest_streak__max']
+        clan.donations = aggrs_dict['donations__sum']
 
         # Unfortunately, we have to do a rather nasty multiple join to get the
         # total number of distinct achievements earned collectively by all the
@@ -405,6 +451,7 @@ class Command(BaseCommand):
     # on if that is a sound idea
     def handle(self, *args, **options):
         obtainTempAchievements()
+        populateDonors()
         # This will end up doing a bunch of writes. Force them to happen all at
         # once with atomic().
         # If this is not done, someone could load a page when e.g. Player writes

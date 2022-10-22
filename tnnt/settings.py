@@ -227,6 +227,14 @@ LOGGING = {
     },
 }
 
+# URLs of swapchest donor files, which will get downloaded and parsed during
+# aggregation.
+DONOR_FILES = [
+    'https://www.hardfought.org/xlogfiles/tnnt/donors',
+    'https://eu.hardfought.org/xlogfiles/tnnt/donors',
+    'https://au.hardfought.org/xlogfiles/tnnt/donors'
+]
+
 # Regexes for unique deaths handling.
 # Rejections are a flat list of regexes that, should they match a death, will
 # remove it from consideration.
