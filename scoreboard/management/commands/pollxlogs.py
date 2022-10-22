@@ -6,7 +6,10 @@ from tnnt import settings
 from pathlib import Path
 import requests
 import sys
+import logging
 from datetime import datetime, timedelta, timezone
+
+logger = logging.getLogger() # root logger
 
 # xlogfile fields that have the same name in the Game model.
 SIMPLE_XLOG_FIELDS = ['version', 'role', 'race', 'gender', 'align', 'points',
@@ -38,10 +41,10 @@ def game_from_xlog(source, xlog_dict):
 
     # filter explore/wizmode games
     if xlog_dict['flags'] & xlog_flags.WIZARD:
-        print('Game not parsed because it was in wizard mode', file=sys.stderr)
+        logger.info('Game not parsed because it was in wizard mode')
         return 0
     if xlog_dict['flags'] & xlog_flags.EXPLORE:
-        print('Game not parsed because it was in explore mode', file=sys.stderr)
+        logger.info('Game not parsed because it was in explore mode')
         return 0
 
     # time/duration information
@@ -50,12 +53,12 @@ def game_from_xlog(source, xlog_dict):
     kwargs['starttime'] = datetime.fromtimestamp(xlog_dict['starttime'], timezone.utc)
     kwargs['endtime'] = datetime.fromtimestamp(xlog_dict['endtime'], timezone.utc)
     if kwargs['starttime'] < settings.TOURNAMENT_START:
-        print('Game not parsed because it started before tournament start:',
-              kwargs['starttime'], file=sys.stderr)
+        logger.info('Game not parsed because it started before tournament start: %s'
+                    % (str(kwargs['starttime'])))
         return 0
     if kwargs['endtime'] > settings.TOURNAMENT_END:
-        print('Game not parsed because it ended after tournament end:',
-              kwargs['endtime'], file=sys.stderr)
+        logger.info('Game not parsed because it ended after tournament end: %s'
+                    % (str(kwargs['endtime'])))
         return 0
     kwargs['realtime'] = timedelta(seconds=xlog_dict['realtime'])
     kwargs['wallclock'] = kwargs['endtime'] - kwargs['starttime']
@@ -115,7 +118,7 @@ def import_from_file(path, src):
         num_added = 0
         for xlog_entry in XlogParser().parse(xlog_file):
             num_added += game_from_xlog(local_src, xlog_entry)
-        print('Created', num_added, 'Games from xlog file', path)
+        logger.info('Created %d Games from xlog file %s' % (num_added, path))
         if src is not None:
             src.file_pos = xlog_file.tell()
             src.save()

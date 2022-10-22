@@ -113,13 +113,13 @@ def obtainTempAchievements():
             # If there is a player who appears here but does not exist in the
             # database, that's fine - they may not have completed their first
             # game yet or logged in on the site. Ignore them.
-            print('Ignoring', fname, '- nonexistent player')
+            logger.info('Ignoring temp achievements from file %s - nonexistent player'
+                        % (fname))
             continue
 
         # wipe any existing temporary achievements of theirs
         player.temp_achievements.clear()
 
-        print(ALL_ACHIEVEMENTS[181].xlogfield)
         with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
             lines = file.readlines()
             # create a dict of { achieve: <achieve bits>, tnntachieve0: <achieve bits>, ... }
