@@ -9,6 +9,7 @@ import os
 import urllib
 import logging
 import requests
+from decimal import Decimal
 
 logger = logging.getLogger() # root logger
 
@@ -276,6 +277,20 @@ def awardTrophies(player_or_clan, allgames_qs):
                 player_or_clan.trophies.add(TROPHIES['Keep The Riders Alive'])
 
 
+# Given a QuerySet of Games, compute the overall Z-score of the winning games.
+# (Does not assume the games are all wins.)
+def computeZscore(game_qs):
+    zscore = Decimal(0.0)
+    roledict = {}
+    for g in game_qs:
+        if not g.won:
+            continue
+        if not g.role in roledict:
+            roledict[g.role] = 0
+        roledict[g.role] += 1
+        zscore += 1 / Decimal(roledict[g.role])
+    return zscore
+
 # Compute LeaderboardBaseFields data on all Players, and write it back.
 def aggregatePlayerData():
     for plr in Player.objects.all():
@@ -307,6 +322,9 @@ def aggregatePlayerData():
 
         # Unique ascs are a one-liner.
         plr.unique_ascs = len(set(g.rrga() for g in winsby_plr))
+
+        # Z-scoring can't be done by simple reduction to a set, though.
+        plr.zscore = computeZscore(winsby_plr)
 
         # Streaks are computed on their own as well.
         streak_lengths = list(map(lambda s: len(s.games), plr.get_streaks()))
@@ -377,8 +395,10 @@ def aggregateClanData():
         # Unique deaths for the clan requires constructing a QuerySet of all
         # games played by clan members.
         gamesby_clan = Game.objects.filter(player__clan=clan)
-        # note: there is no winsby_clan because it doesn't seem needed
+        winsby_clan = gamesby_clan.filter(won=True)
+
         clan.unique_deaths = len(uniqdeaths.compile_unique_deaths(gamesby_clan))
+        clan.zscore = computeZscore(winsby_clan)
 
         # Unique ascs are still a one-liner.
         clan.unique_ascs = len(set(g.rrga() for g in gamesby_clan if g.won))
