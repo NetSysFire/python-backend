@@ -265,15 +265,15 @@ def awardTrophies(player_or_clan, allgames_qs):
     for g in allgames_qs.filter(won=True).prefetch_related('conducts'):
         for c in g.conducts.all():
             if c.shortname == 'neme':
-                player_or_clan.trophies.add(TROPHIES['Never Kill the Quest Nemesis'])
+                player_or_clan.trophies.add(TROPHIES['Keep Your Nemesis Alive'])
             elif c.shortname == 'vlad':
-                player_or_clan.trophies.add(TROPHIES['Never Kill Vlad'])
+                player_or_clan.trophies.add(TROPHIES['Keep Vlad Alive'])
             elif c.shortname == 'wiz':
-                player_or_clan.trophies.add(TROPHIES['Never Kill Rodney'])
+                player_or_clan.trophies.add(TROPHIES['Keep Rodney Alive'])
             elif c.shortname == 'prst':
-                player_or_clan.trophies.add(TROPHIES['Never Kill the High Priest of Moloch'])
+                player_or_clan.trophies.add(TROPHIES['Keep The High Priest of Moloch Alive'])
             elif c.shortname == 'ride':
-                player_or_clan.trophies.add(TROPHIES['Never Kill a Rider'])
+                player_or_clan.trophies.add(TROPHIES['Keep The Riders Alive'])
 
 
 # Compute LeaderboardBaseFields data on all Players, and write it back.
