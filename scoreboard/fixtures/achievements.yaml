@@ -1387,7 +1387,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Reincarnation Cancelled"
-    description: "Get a troll corpse to rot"
+    description: "\"Feel less hassled\" after blocking a troll's revival attempt"
     ingameid: "163"
     define: "A_BLOCKED_TROLL_REVIVAL"
     xlogfield: "tnntachieve2"
@@ -2547,7 +2547,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Leeroy Jenkins"
-    description: "Cross the Castle drawbridge threshold within 30 turns of entering the level"
+    description: "Cross the Castle drawbridge threshold within 30 turns of entering the level for the first time"
     ingameid: "308"
     define: "A_ENTERED_CASTLE_QUICKLY"
     xlogfield: "tnntachieve4"
