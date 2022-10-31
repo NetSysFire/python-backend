@@ -108,8 +108,9 @@
           <form method="post" class="disguised-button">
             {% csrf_token %}
             <input name="join_clan_id" type="hidden" value="{{othclan.id}}" />
+            <div name="join_clan_name">{{othclan.name}} - </div>
             <button name="join_clan" type="submit" value="{{othclan.name}}">
-              {{othclan.name}}
+              accept invite
             </button>
           </form>
         </li>
