@@ -20,6 +20,7 @@ ALL_ACHIEVEMENTS = list(Achievement.objects.all())
 TOTAL_ACHIEVEMENTS = len(ALL_ACHIEVEMENTS)
 TOTAL_CONDUCTS = Conduct.objects.count()
 TROPHIES = { tr.name: tr for tr in Trophy.objects.all() }
+UNIQ_ACHFIELDS = len(set([ach.xlogfield for ach in ALL_ACHIEVEMENTS]))
 
 # These are determined by NetHack and there's no expectation that TNNT would
 # ever change them. However, they may need to change if changes are made to
@@ -167,6 +168,12 @@ def obtainTempAchievements():
 
         with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
             lines = file.readlines()
+
+            if len(lines) != UNIQ_ACHFIELDS:
+                logger.warning('Temp ach file %s is malformed with wrong number of lines'
+                               % (fname))
+                continue # for fname in filelist
+
             # create a dict of { achieve: <achieve bits>, tnntachieve0: <achieve bits>, ... }
             # Assumption: file contents have first line of achieve bits, then
             # subsequent lines are tnntachieve0, tnntachieve1, ...
