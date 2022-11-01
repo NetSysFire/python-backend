@@ -159,7 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Session expiration.
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 15 * 60 # in seconds, so 15 minutes
+SESSION_COOKIE_AGE = 7 * 24 * 60 * 60 # in seconds, so 1 week
 
 # Where you get taken after logging in/out
 
