@@ -8,7 +8,7 @@
     bit: 0
 - model: scoreboard.achievement
   fields:
-    name: Feel the Burn
+    name: We Need To Go Deeper
     description: Enter Gehennom
     ingameid: V02
     define: A_ENTERED_GEHENNOM
