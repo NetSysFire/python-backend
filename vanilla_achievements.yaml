@@ -1,6 +1,6 @@
 - model: scoreboard.achievement
   fields:
-    name: Ringing in My Ears
+    name: Ringing In My Ears
     description: Get the Bell of Opening
     ingameid: V01
     define: A_GOT_BELL
@@ -8,7 +8,7 @@
     bit: 0
 - model: scoreboard.achievement
   fields:
-    name: Feel the Burn
+    name: We Need To Go Deeper
     description: Enter Gehennom
     ingameid: V02
     define: A_ENTERED_GEHENNOM
@@ -16,7 +16,7 @@
     bit: 1
 - model: scoreboard.achievement
   fields:
-    name: Emerging Into the Light
+    name: Emerging Into The Light
     description: Get the Candelabrum of Invocation
     ingameid: V03
     define: A_GOT_CANDLE
@@ -32,8 +32,8 @@
     bit: 3
 - model: scoreboard.achievement
   fields:
-    name: Bell, Book and Candle
-    description: Perform the invocation ritual
+    name: Bell, Book, and Candle
+    description: Perform the Invocation Ritual
     ingameid: V05
     define: A_DID_INVOCATION
     xlogfield: achieve
@@ -48,8 +48,8 @@
     bit: 5
 - model: scoreboard.achievement
   fields:
-    name: From the Dungeon they Came
-    description: Enter the Elemental Planes
+    name: From the Dungeon They Came
+    description: Enter the Planes
     ingameid: V07
     define: A_ENTERED_PLANES
     xlogfield: achieve
@@ -74,7 +74,7 @@
     bit: 9
 - model: scoreboard.achievement
   fields:
-    name: Boulder Pusher
+    name: Boulder-Pusher
     description: Finish Sokoban
     ingameid: V10
     define: A_DID_SOKOBAN
