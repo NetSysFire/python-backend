@@ -375,20 +375,19 @@ def aggregateClanData():
         clan_plrs = Player.objects.filter(clan=clan)
 
         # Basic aggregations can be computed pretty easily from the Players.
-        # post 2021 TODO: test: because of atomic, players have been save()d but
-        # not actually committed to the database yet. Is this getting the right
-        # info?
         aggrs_dict = clan_plrs.aggregate(Sum('total_games'),
                                          Sum('wins'),
                                          Sum('games_over_1000_turns'),
                                          Sum('games_scummed'),
                                          Max('longest_streak'),
+                                         Sum('splats'),
                                          Sum('donations'))
         clan.total_games = aggrs_dict['total_games__sum']
         clan.wins = aggrs_dict['wins__sum']
         clan.games_over_1000_turns = aggrs_dict['games_over_1000_turns__sum']
         clan.games_scummed = aggrs_dict['games_scummed__sum']
         clan.longest_streak = aggrs_dict['longest_streak__max']
+        clan.splats = aggrs_dict['splats__sum']
         clan.donations = aggrs_dict['donations__sum']
 
         # Unfortunately, we have to do a rather nasty multiple join to get the
