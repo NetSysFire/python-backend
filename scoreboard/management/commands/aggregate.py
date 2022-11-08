@@ -145,7 +145,7 @@ def obtainTempAchievements():
         return
     # process only files matching the temp achievement filename format, so it
     # won't try to read log files, etc
-    fn_pat = re.compile(r".*\.[0-9]{10,}(?:\.(au|eu|us))?\.txt$")
+    fn_pat = re.compile(r".*\.tach(?:\.(au|eu|us))?\.txt$")
     filelist = [ fn for fn in os.listdir(Path(TEMP_ACHIEVEMENTS_PATH))
                 if fn_pat.fullmatch(fn) ]
 
