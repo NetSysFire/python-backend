@@ -6,6 +6,7 @@ from django.db.models import Sum, Min, Max, Count
 from tnnt import uniqdeaths
 from pathlib import Path
 import os
+import re
 import urllib
 import logging
 import requests
@@ -142,7 +143,11 @@ def obtainTempAchievements():
         # having no TEMP_ACHIEVEMENTS_PATH in settings indicates you don't want
         # to show these
         return
-    filelist = os.listdir(Path(TEMP_ACHIEVEMENTS_PATH))
+    # process only files matching the temp achievement filename format, so it
+    # won't try to read log files, etc
+    fn_pat = re.compile(r".*\.[0-9]{10,}(?:\.(au|eu|us))?\.txt$")
+    filelist = [ fn for fn in os.listdir(Path(TEMP_ACHIEVEMENTS_PATH))
+                if fn_pat.fullmatch(fn) ]
 
     # Unconditionally wipe all temporary achievements from everyone. If someone
     # still has some from the same game in progress, the file will still be
