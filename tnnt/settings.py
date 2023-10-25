@@ -253,6 +253,7 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     (r"by the invisible ", "by "),
     (r"by (an|a) invisible ", "by a "),
     (r"by invisible ", "by "),
+    (r"by .*; the shopkeeper", "by a shopkeeper"),
     (r" (her|his) ", " their "),
     (r" (herself|himself) ", " themselves "),
     (r" (herself|himself)$", " themselves"),
