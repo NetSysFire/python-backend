@@ -27,8 +27,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['tnnt.org']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tnnt.org']
 
 
 # Application definition
@@ -67,8 +67,8 @@ MIDDLEWARE = [
 ]
 
 # Required when using Django version 4.x
-CSRF_TRUSTED_ORIGINS = []
-# CSRF_TRUSTED_ORIGINS = ['https://tnnt.org']
+# CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = ['https://tnnt.org']
 
 ROOT_URLCONF = 'tnnt.urls'
 
@@ -174,12 +174,12 @@ AUTHENTICATION_BACKENDS = [
 
 # Path to dgl sqlite3 database
 
-DGL_DATABASE_PATH = './dgamelaunch_test.db'
-# DGL_DATABASE_PATH = '/opt/nethack/chroot/dgldir/dgamelaunch.db'
+# DGL_DATABASE_PATH = './dgamelaunch_test.db'
+DGL_DATABASE_PATH = '/opt/nethack/chroot/dgldir/dgamelaunch.db'
 
 # Path to where TNNT is writing temp achievement files
 # If you don't want to show temp achievements, leave this uncommented
-# TEMP_ACHIEVEMENTS_PATH = '/opt/nethack/chroot/tnnt/temp_achievements'
+TEMP_ACHIEVEMENTS_PATH = '/opt/nethack/chroot/tnnt/temp_achievements'
 
 # Clan size limit
 
@@ -187,12 +187,12 @@ MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
 
-CLAN_FREEZE_TIME = datetime.fromisoformat('2022-11-10T00:00:00+00:00')
+CLAN_FREEZE_TIME = datetime.fromisoformat('2023-11-10T00:00:00+00:00')
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2022-11-01T00:00:00+00:00')
-TOURNAMENT_END   = datetime.fromisoformat('2022-12-01T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2023-11-01T00:00:00+00:00')
+TOURNAMENT_END   = datetime.fromisoformat('2023-12-01T00:00:00+00:00')
 
 # Main log file
 
