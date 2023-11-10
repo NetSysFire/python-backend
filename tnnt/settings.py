@@ -28,7 +28,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['tnnt.org']
+ALLOWED_HOSTS = ['tnnt.org','www.tnnt.org']
 
 
 # Application definition

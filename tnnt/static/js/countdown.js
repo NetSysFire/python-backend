@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#countdown .before').style.display = 'inline';
         document.querySelector('#countdown .counter').style.display = 'inline';
         // when.textContent = dt(start);
-        when.textContent = "Nov 1 at midnight UTC"
+        when.textContent = "Nov 1 at 00:00 UTC"
         mode = 'before';
       }
     }
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#countdown .before').style.display = 'none';
         document.querySelector('#countdown .during').style.display = 'inline';
         // when.textContent = dt(end);
-        when.textContent = "Dec 1 at midnight UTC"
+        when.textContent = "Dec 1 at 00:00 UTC"
       }
     }
 
