@@ -78,8 +78,8 @@ def game_from_xlog(source, xlog_dict):
         if xlog_dict['achieve'] & 0x20:
             kwargs['splatted'] = True
 
-    # ditto for mines/soko
-    if xlog_dict['achieve'] & 0x600:
+    # ditto for mines/soko (requires both)
+    if (xlog_dict['achieve'] & 0x600) == 0x600:
         kwargs['mines_soko'] = True
 
     # find/create player
