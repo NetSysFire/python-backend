@@ -31,8 +31,8 @@ function dt(t) {
 //--- main ----------------------------------------------------------------
 
 var
-  start = new Date(1667260800*1000),
-  end = new Date(1669852800*1000),
+  start = new Date(1698796800*1000),
+  end = new Date(1701388800*1000),
   min = 60000, hour = min*60, day = hour*24;
 
 //--- interval handler ----------------------------------------------------
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#countdown .before').style.display = 'inline';
         document.querySelector('#countdown .counter').style.display = 'inline';
         // when.textContent = dt(start);
-        when.textContent = "Nov 1 at midnight UTC"
+        when.textContent = "Nov 1 at 00:00 UTC"
         mode = 'before';
       }
     }
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#countdown .before').style.display = 'none';
         document.querySelector('#countdown .during').style.display = 'inline';
         // when.textContent = dt(end);
-        when.textContent = "Dec 1 at midnight UTC"
+        when.textContent = "Dec 1 at 00:00 UTC"
       }
     }
 

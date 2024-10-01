@@ -168,8 +168,9 @@ def obtainTempAchievements():
                         % (fname))
             continue
 
-        # wipe any existing temporary achievements of theirs
-        player.temp_achievements.clear()
+        # don't call player.temp_achievements.clear() before each file (as we
+        # previously did), so files from simultaneous games on multiple servers
+        # are additive, instead of only showing the last one in the list.
 
         with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
             lines = file.readlines()

@@ -23,7 +23,18 @@ def text_field_clean(input_str, input_type):
 
     # don't allow non-printable characters
     if not input_str.isprintable():
-        raise forms.ValidationError('%s cannot contain non-printable characters' % input_type)
+        raise forms.ValidationError(
+            '%s cannot contain non-printable characters' % input_type)
+
+    # TODO: remove this requirement once we can get the MySQL database
+    # converted to utf8mb4 instead of utf8mb3, so that 4-byte characters will
+    # work.  If a certain subset of 4-byte characters should still be blocked
+    # it can be replaced with a more narrowly scoped test.
+    for char in input_str:
+        if len(char.encode('utf-8')) >= 4:
+            raise forms.ValidationError(
+                ('%s cannot contain 4-byte UTF-8 characters (such as emoji)'
+                 % input_type))
 
     return input_str
 

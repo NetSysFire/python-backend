@@ -350,6 +350,20 @@ header {
   margin:0 auto 1em auto;
 }
 
+#shirts_notification {
+  background-color: #eb0;
+  width: 100%;
+  padding: 0.7em;
+  font-weight: 800;
+  font-size: 120%;
+  text-align: center;
+  color: #181818;
+}
+
+#shirts_notification a:hover {
+  color:#f2f5ff;
+}
+
 /* Can't have background color set on the whole header; it creates artifacts
  * around the bottom of the element. */
 #headerbar {
@@ -428,6 +442,10 @@ table#navlogo td#logo {
 
 table#navlogo tr#lowerheader td {
   border-bottom:none;
+}
+
+table#navlogo #logo img {
+  filter: drop-shadow(1.5px 1.5px black);
 }
 
 /*====================================================================
