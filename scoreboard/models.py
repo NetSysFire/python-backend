@@ -179,13 +179,9 @@ class Game(models.Model):
     race         = models.CharField(max_length=16, null=True)
     gender       = models.CharField(max_length=16, null=True)
     align        = models.CharField(max_length=16, null=True)
-    # we don't care about game mode; explore/wizmode games will just be discarded
-
-    # these are handled as python ints in an intermediate step
-    # post 2021 TODO: check: how big are python ints?
-    # post 2021 TODO: rename points => score
     points       = models.BigIntegerField(null=True)
     turns        = models.BigIntegerField()
+    # we don't care about game mode; explore/wizmode games will just be discarded
 
     # NOTE: All the "fastest realtime" code uses wallclock, NOT realtime.
     # Possible feature is a separate leaderboard for fastest time according to
