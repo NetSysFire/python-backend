@@ -351,9 +351,9 @@ def aggregatePlayerData():
         # Skip this if the player has no games, and for most of them, if the
         # player has no wins.
         if plr.total_games > 0:
+            plr.max_score_game = gamesby_plr.order_by('-points')[0]
             if plr.wins > 0:
                 plr.min_score_asc = winsby_plr.order_by('points')[0]
-                plr.max_score_asc = winsby_plr.order_by('-points')[0]
                 plr.lowest_turncount_asc = winsby_plr.order_by('turns')[0]
                 plr.fastest_realtime_asc = winsby_plr.order_by('wallclock')[0]
                 plr.first_asc = winsby_plr.earliest('endtime')
@@ -440,10 +440,6 @@ def aggregateClanData():
                 .annotate(minscore=Min('min_score_asc__points')) \
                 .order_by('minscore') \
                 [0].min_score_asc
-            clan.max_score_asc = clan_plrs.filter(wins__gt=0) \
-                .annotate(maxscore=Max('max_score_asc__points')) \
-                .order_by('-maxscore') \
-                [0].max_score_asc
             clan.lowest_turncount_asc = clan_plrs.filter(wins__gt=0) \
                 .annotate(minturns=Min('lowest_turncount_asc__turns')) \
                 .order_by('minturns') \
@@ -462,6 +458,10 @@ def aggregateClanData():
 
         if clan.total_games > 0:
             # Same as the above block but for stats which don't require wins.
+            clan.max_score_game = clan_plrs.filter(total_games__gt=0) \
+                .annotate(maxscore=Max('max_score_game__points')) \
+                .order_by('-maxscore') \
+                [0].max_score_game
             clan.max_achieves_game = clan_plrs.filter(total_games__gt=0) \
                 .annotate(maxachieve=Count('max_achieves_game__achievements')) \
                 .order_by('-maxachieve') \

@@ -20,7 +20,7 @@ def wipe_leaderboard_fields(entity):
     entity.max_conducts_asc = None
     entity.max_achieves_game = None
     entity.min_score_asc = None
-    entity.max_score_asc = None
+    entity.max_score_game = None
     entity.first_asc = None
     entity.save()
 

@@ -153,10 +153,10 @@ class LeaderboardsView(TemplateView):
             'minscore_dlg':    F('min_score_asc__source__dumplog_fmt'),
             'minscore_nam':    F('min_score_asc__player__name'),
 
-            'maxscore':        F('max_score_asc__points'),
-            'maxscore_stt':    F('max_score_asc__starttime'),
-            'maxscore_dlg':    F('max_score_asc__source__dumplog_fmt'),
-            'maxscore_nam':    F('max_score_asc__player__name'),
+            'maxscore':        F('max_score_game__points'),
+            'maxscore_stt':    F('max_score_game__starttime'),
+            'maxscore_dlg':    F('max_score_game__source__dumplog_fmt'),
+            'maxscore_nam':    F('max_score_game__player__name'),
         }
 
         # Now do the actual queries. Only 2 queries!
@@ -227,8 +227,8 @@ class LeaderboardsView(TemplateView):
               'title': 'Most Achievements Overall', 'columntitle': 'achievements' },
             { 'id': 'minscore', 'descending': False, 'wins_only': True,
               'title': 'Lowest Scoring Ascension', 'columntitle': 'points' },
-            { 'id': 'maxscore', 'descending': True, 'wins_only': True,
-              'title': 'Highest Scoring Ascension', 'columntitle': 'points' },
+            { 'id': 'maxscore', 'descending': True, 'wins_only': False,
+              'title': 'Highest Scoring Game', 'columntitle': 'points' },
             { 'id': 'longstreak', 'stat': 'longest_streak', 'descending': True,
               'wins_only': True,
               'title': 'Longest Streak', 'columntitle': 'streak length' },

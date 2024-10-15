@@ -71,10 +71,7 @@ class LeaderboardBaseFields(models.Model):
     max_conducts_asc       = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     max_achieves_game      = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     min_score_asc          = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
-    # post 2021 TODO: Can this possibly be made into a "max score game" rather
-    # than an ascension field? At the upper extremes of points, whether or not
-    # you ascended is rather irrelevant.
-    max_score_asc          = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
+    max_score_game         = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     first_asc              = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
 
     # Return a string denoting the ascension ratio of this player or clan.
