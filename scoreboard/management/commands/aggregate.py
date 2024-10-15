@@ -26,7 +26,8 @@ UNIQ_ACHFIELDS = len(set([ach.xlogfield for ach in ALL_ACHIEVEMENTS]))
 # These are determined by NetHack and there's no expectation that TNNT would
 # ever change them. However, they may need to change if changes are made to
 # vanilla NetHack which are then incorporated into TNNT (for instance, if the
-# DevTeam adds a new role).
+# DevTeam adds a new role or race or, more likely, allows a new role-race
+# combination).
 TOTAL_GENDERS = 2
 TOTAL_ALIGNMENTS = 3
 TOTAL_RACES = 5

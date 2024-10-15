@@ -236,11 +236,11 @@ DONOR_FILES = [
 ]
 
 # Regexes for unique deaths handling.
-# Rejections are a flat list of regexes that, should they match a death, will
-# remove it from consideration.
 # Normalizations are a list of 2-tuples of regex and string, which will be the
 # first and second arguments to a re.sub() call whose third argument is the
 # death string. They are executed in the order they appear here.
+# Rejections are a flat list of regexes that, should they match a death (after
+# it's been normalized), will remove it from consideration.
 UNIQUE_DEATH_REJECTIONS = [
     r"^ascended",
     r"^quit",

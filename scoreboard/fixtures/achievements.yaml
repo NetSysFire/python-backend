@@ -88,6 +88,9 @@
     define: A_KILLED_MEDUSA
     xlogfield: achieve
     bit: 11
+# TODO after TNNT is on 3.7 - add new vanilla achievements (not necessarily all
+# of them, depending on whether we want to add all the new rank title
+# achievements)
 - model: scoreboard.achievement
   fields:
     name: "Back to Civilisation"

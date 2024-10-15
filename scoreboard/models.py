@@ -171,21 +171,15 @@ class Source(models.Model):
     # %st - game start timestamp.
     dumplog_fmt = models.CharField(max_length=128)
 
-    # These fields are more NHS specific (not relevant to tnnt).
-    # variant     = models.CharField(max_length=32)
-    # description = models.CharField(max_length=256)
-    # website     = models.URLField(null=True)
-
 class Game(models.Model):
     # Represents a single game: a single line in the xlog, a single dumplog, etc.
     # The following fields are those drawn directly from the xlogfile:
-    # polyinit and hah don't exist in tnnt, explore/wizmode games will just be discarded
-    # GameMode     = models.TextChoices('GameMode', 'normal explore polyinit hah wizard')
     version      = models.CharField(max_length=32)
     role         = models.CharField(max_length=16)
     race         = models.CharField(max_length=16, null=True)
     gender       = models.CharField(max_length=16, null=True)
     align        = models.CharField(max_length=16, null=True)
+    # we don't care about game mode; explore/wizmode games will just be discarded
 
     # these are handled as python ints in an intermediate step
     # post 2021 TODO: check: how big are python ints?
@@ -193,7 +187,9 @@ class Game(models.Model):
     points       = models.BigIntegerField(null=True)
     turns        = models.BigIntegerField()
 
-    # NOTE: All the "fastest realtime" code uses wallclock, NOT realtime
+    # NOTE: All the "fastest realtime" code uses wallclock, NOT realtime.
+    # Possible feature is a separate leaderboard for fastest time according to
+    # realtime. Depends on if people want it.
     realtime     = models.DurationField(null=True)
     wallclock    = models.DurationField(null=True)
     maxlvl       = models.IntegerField(null=True)
@@ -210,8 +206,9 @@ class Game(models.Model):
     mines_soko   = models.BooleanField(default=False)
 
     # For tracking certain subsets of non-won games. For our purposes, a "splat"
-    # is a game that got to the final run but did not end in victory. deathlev
-    # is a native xlogfile field.
+    # is a game that didn't end in victory, but the player had the Amulet at
+    # some point (they don't have to die with it in their possession).
+    # deathlev is a native xlogfile field.
     splatted     = models.BooleanField(default=False)
     deathlev     = models.IntegerField(null=True)
 
