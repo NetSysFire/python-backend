@@ -431,27 +431,17 @@ def aggregateClanData():
             # qualifying games for that stat.
             # The [0] reference should be fine - only way that would error is if
             # the clan had no members.
-            # post 2021 TODO: Should this instead be formatted without the
-            # minning and maxing and instead just be e.g. for minscore
-            # clan.min_score_asc = clan_plrs \
-            #     .order_by('min_score_asc__points') \
-            #     [0].min_score_asc
-            # ... except for the #cond and #ach ones which do need to annotate with a Count
             clan.min_score_asc = clan_plrs.filter(wins__gt=0) \
-                .annotate(minscore=Min('min_score_asc__points')) \
-                .order_by('minscore') \
+                .order_by('min_score_asc__points') \
                 [0].min_score_asc
             clan.lowest_turncount_asc = clan_plrs.filter(wins__gt=0) \
-                .annotate(minturns=Min('lowest_turncount_asc__turns')) \
-                .order_by('minturns') \
+                .order_by('lowest_turncount_asc__turns') \
                 [0].lowest_turncount_asc
             clan.fastest_realtime_asc = clan_plrs.filter(wins__gt=0) \
-                .annotate(mintime=Min('fastest_realtime_asc__wallclock')) \
-                .order_by('mintime') \
+                .order_by('fastest_realtime_asc__wallclock') \
                 [0].fastest_realtime_asc
             clan.first_asc = clan_plrs.filter(wins__gt=0) \
-                .annotate(firsttime=Min('first_asc__endtime')) \
-                .earliest('firsttime').first_asc
+                .earliest('first_asc__endtime').first_asc
             clan.max_conducts_asc = clan_plrs.filter(wins__gt=0) \
                 .annotate(ncond=Count('max_conducts_asc__conducts')) \
                 .order_by('-ncond') \
@@ -460,8 +450,7 @@ def aggregateClanData():
         if clan.total_games > 0:
             # Same as the above block but for stats which don't require wins.
             clan.max_score_game = clan_plrs.filter(total_games__gt=0) \
-                .annotate(maxscore=Max('max_score_game__points')) \
-                .order_by('-maxscore') \
+                .order_by('-max_score_game__points') \
                 [0].max_score_game
             clan.max_achieves_game = clan_plrs.filter(total_games__gt=0) \
                 .annotate(maxachieve=Count('max_achieves_game__achievements')) \
