@@ -224,8 +224,15 @@ class Game(models.Model):
     # Return a URL to the dumplog of this game.
     # ASSUMPTION: No two Games of the same player will have the same starttime.
     def get_dumplog(self):
-        # post 2021 TODO: Inefficient in that this requires lookups to Player and Source
-        # every time it's called on a different Game. Look into phasing this out.
+        # Inefficient in that this requires lookups to Player and Source every
+        # time it's called on a different Game.
+        # Currently the only place this is used is when rendering a player's
+        # individual streak games (most dumplogs are rendered on the
+        # leaderboard, which while it does have to join Player and Source, only
+        # has to do it for a couple big queries instead of a lot of small Game
+        # queries.). So it shouldn't be that bad of a performance
+        # hit. But if it becomes a problem, we should consider denormalizing and
+        # storing the full dumplog link with each Game.
         return dumplog_utils.format_dumplog(self.source.dumplog_fmt,
                                             self.player.name,
                                             self.starttime)
