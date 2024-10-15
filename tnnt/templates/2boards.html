@@ -53,7 +53,13 @@
         {% endfor %}
       </tbody>
     </table>
-    {# post 2021 TODO: Maybe at some point unify these two very similar tables. Not a priority currently. #}
+    {% comment %}
+       Maybe at some point unify these two very similar tables.
+       Not a priority currently; it would avoid some repetitiveness, but that
+       would be the only real gain, and it might wind up less maintainable after
+       such a change than it is now (due to how the bits of these boards that
+       AREN'T the same would have to be awkwardly hacked in).
+    {% endcomment %}
     <table>
       <thead>
         <tr class="framed">
