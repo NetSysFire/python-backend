@@ -468,9 +468,15 @@ def aggregateClanData():
 class Command(BaseCommand):
     help = 'Compute aggregate data from the set of all games'
 
-    # post 2021 TODO: move most of this file's logic to tnnt/aggregate.py so that it can
-    # be called on clan-membership-change events, subject to design discussion
-    # on if that is a sound idea
+    # To be completely accurate and up-to-date, the clan aggregation logic
+    # "should" be triggered upon any person entering or leaving a clan.
+    #
+    # However, that could result in triggering aggregation way too often when
+    # clans are fluid early in the tournament, and possibly even exposes it to
+    # abuse if someone creates and disbands a clan repeatedly. Since players are
+    # generally aware that the site may lag real life by a few minutes and no
+    # one is clamoring for us to do just-in-time updates, it remains the most
+    # convenient to just keep this as a command that's run at regular intervals.
     def handle(self, *args, **options):
         obtainTempAchievements()
         populateDonors()
