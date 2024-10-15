@@ -122,7 +122,7 @@
 
 {# post 2021 TODO: Currently only shown on Player view, streak computation for Clans' players is not shown #}
 {% if not isClan %}
-  {% if player.longest_streak > 0 %}
+  {% if player_or_clan.longest_streak > 0 %}
     <h2>STREAKS</h2>
     <table>
       <thead>
@@ -136,7 +136,7 @@
         </tr>
       </thead>
       <tbody>
-        {% with streaks=player.get_streaks %}
+        {% with streaks=player_or_clan.get_streaks %}
           {% for streak in streaks %}
             <tr>
               <td class="num dim">{{ forloop.counter }}</td>
