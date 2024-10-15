@@ -37,7 +37,7 @@ def find_player(findname):
         else:
             player = Player(name=findname, clan=None, clan_admin=False)
             player.save()
-            logger.info('find_player created a new player who exists in dgl db with name "%s"',
+            logger.info('find_player made new TNNT player "%s" who already existed in dgl db',
                         findname)
             return player
 
@@ -51,8 +51,8 @@ class HdfAuthBackend(BaseBackend):
             pwd_hash = dgl_curs.execute('SELECT password FROM dglusers WHERE username = ?', (username,)).fetchone()
         except sqlite3.Error as e:
             logger.error('ERROR connecting to or executing SQL on sqlite database (get password)')
-            logger.error('  db path:', DGL_DATABASE_PATH)
-            logger.error('  username:', username)
+            logger.error('  db path: %s', DGL_DATABASE_PATH)
+            logger.error('  username: %s', username)
             return None
         if pwd_hash is None:
             logger.info("%s tried to log in but doesn't exist in dgl db", username)
