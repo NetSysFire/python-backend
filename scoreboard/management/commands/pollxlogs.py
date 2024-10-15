@@ -107,6 +107,7 @@ def import_from_file(path, src):
     If `src` isn't None, use its internal tracking of file positions and update
     it at the end. If it's None, ignore this.
     '''
+    logger.info('Importing Games from local file %s', path)
     if src is None:
         # we still need SOMETHING to pass to from_xlog
         local_src = Source.objects.all()[0]
@@ -131,6 +132,7 @@ def import_records(src):
 
 
 def sync_local_file(url, local_file):
+    logger.info('Syncing remote xlog file from %s', url)
     xlog_path = Path(settings.XLOG_DIR) / local_file
     with xlog_path.open("ab") as xlog_file:
         r = requests.get(url, headers={"Range": f"bytes={xlog_file.tell()}-"})
