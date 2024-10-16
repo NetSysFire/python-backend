@@ -14,26 +14,33 @@ from tnnt import uniqdeaths
 
 logger = logging.getLogger() # use root logger
 
-# Convenience function, not a view.
+# Convenience function used by multiple views, not a view itself.
+#
 # Given a list of dicts containing Game fields (specifically 'playername',
 # 'dlg_fmt' and 'starttime'), also insert a 'dumplog' field into each of those
 # dicts containing the formatted dumplog URL.
-def bulk_upd_games(gamelist):
+#
+# Also provide the rol-rac-gen-aln string and the list of conducts (if
+# do_conducts is True).
+def bulk_upd_games(gamelist, do_conducts):
     for g in gamelist:
         g['dumplog'] = dumplog_utils.format_dumplog(g['dlg_fmt'], g['playername'],
                                                     g['starttime'])
 
-        # post 2021 TODO: this is a duplicate of Game.rrga, but unlike dumplog
-        # formatting, that function is used in aggregation
+        # This is a duplicate of Game.rrga, but we can't call that because the
+        # type of g here is not a Game but a dict.
+        # Since it's a one-liner, not a big deal to leave it duplicated.
         g['rrga'] = '-'.join([g['role'], g['race'], g['gender0'], g['align0']])
 
-        # post 2021 TODO: this is not ideal because it's an extra query per each
-        # ascension in the list. but perhaps not worth the headache of making
-        # all these preproc'd Game lists into Game-x-Conduct lists.
-        # This used to be Game.conducts_as_str, whose description was:
-        # > Return a string containing this game's conducts in human readable form
-        # > e.g. "poly wish veg"
-        g['conducts'] = [ c.shortname for c in Conduct.objects.filter(game__id=g['id']) ]
+        if do_conducts:
+            # This is not ideal because it's an extra query per each ascension
+            # in the list, but it's not worth the headache of making all these
+            # preproc'd Game lists into Game-x-Conduct lists.
+            #
+            # This used to be Game.conducts_as_str(), whose description was:
+            # > Return a string containing this game's conducts in human readable form
+            # > e.g. "poly wish veg"
+            g['conducts'] = [ c.shortname for c in Conduct.objects.filter(game__id=g['id']) ]
 
     return gamelist
 
@@ -80,9 +87,9 @@ class HomepageView(TemplateView):
         base_qs = Game.objects.annotate(
             playername=F('player__name'),
             dlg_fmt=F('source__dumplog_fmt')).order_by('-endtime')
-        kwargs['last10games'] = bulk_upd_games(list(base_qs.values()[:10]))
+        kwargs['last10games'] = bulk_upd_games(list(base_qs.values()[:10]), False)
         kwargs['last10wins'] = \
-            bulk_upd_games(list(base_qs.filter(won=True).values()[:10]))
+            bulk_upd_games(list(base_qs.filter(won=True).values()[:10]), True)
 
         return kwargs
 
@@ -350,10 +357,10 @@ class SinglePlayerOrClanView(TemplateView):
                                              dlg_fmt=F('source__dumplog_fmt')) \
                                    .order_by('-endtime')
         kwargs['ascensions'] = \
-            bulk_upd_games(list(base_game_qs.filter(won=True).values()))
+            bulk_upd_games(list(base_game_qs.filter(won=True).values()), True)
         # 10 most recent games
         kwargs['recentgames'] = \
-            bulk_upd_games(list(base_game_qs[:10].values()))
+            bulk_upd_games(list(base_game_qs[:10].values()), False)
 
         # post 2021 TODO: this currently only gets the deaths, no other details
         kwargs['uniquedeaths'] = sorted(list(uniqdeaths.compile_unique_deaths(base_game_qs)))
