@@ -3,7 +3,7 @@ from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Exists, OuterRef, F, Count, Value, Sum
 from scoreboard.models import *
-from tnnt.forms import CreateClanForm, InviteMemberForm
+from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
 from . import hardfought_utils # find_player
 from . import dumplog_utils # format_dumplog
@@ -453,6 +453,8 @@ class ClanMgmtView(View):
             kwargs['invite_member_form'] = InviteMemberForm()
         if 'create_clan_form' not in kwargs:
             kwargs['create_clan_form'] = CreateClanForm()
+        if 'set_message_form' not in kwargs:
+            kwargs['set_message_form'] = SetMessageForm()
 
         return kwargs
 
@@ -463,8 +465,6 @@ class ClanMgmtView(View):
         if not request.user.is_authenticated:
             return HttpResponseRedirect('/login')
 
-        # post 2021 TODO: This case is duplicated from the POST below. Ideally they should
-        # be unified.
         try:
             get_player(request.user)
         except Player.DoesNotExist:
@@ -524,6 +524,9 @@ class ClanMgmtView(View):
 
         elif 'kick' in request.POST:
             self.kick_member(request, player, ctx)
+
+        elif 'set_message' in request.POST:
+            self.set_clan_message(request, player, ctx)
 
         return render(request, self.template_name, self.get_context_data(**ctx))
 
@@ -837,6 +840,32 @@ class ClanMgmtView(View):
         # FUTURE TODO: would be nice if this and all the other post operations
         # also updated a context message that gets displayed to show success; in
         # this case it would be "Successfully kicked foo out of the clan"
+
+    def set_clan_message(self, request, player, ctx):
+        if player.clan is None:
+            logger.warning("%s is not in a clan but attempted to set a message",
+                           player.name)
+            ctx['errmsg'] = "You can't set a clan message - you're not in a clan"
+            return
+
+        if not player.clan_admin:
+            logger.warning("%s is not a clan admin but attempted to set a message",
+                           player.name)
+            ctx['errmsg'] = "You can't set a clan message - you aren't an admin"
+            return
+
+        set_msg_form = SetMessageForm(request.POST)
+
+        if not set_msg_form.is_valid():
+            ctx['invite_member_form'] = set_msg_form
+            return
+
+        clan = player.clan
+        clan.message = set_msg_form.cleaned_data['message']
+        clan.save()
+        logger.info('%s set the message of clan %s to "%s"',
+                    player.name, clan.name, clan.message)
+
 
     # FUTURE TODO: functionality for a clanless player to request becoming a
     # member of a clan they input, admins can accept (inverse of invites)

@@ -54,6 +54,14 @@
         <button name="disband" type="submit">Disband clan</button>
       {% endif %}
     </form>
+    <p>Clan message: {{ clan.message }}</p>
+    {% if me.clan_admin %}
+    <form method="post">
+      {% csrf_token %}
+      {{ set_message_form }}
+      <button name="set_message" type="submit">Update message</button>
+    </form>
+    {% endif %}
     <p>Clan members:</p>
     <ul class="clanlist">
       {% for member in members %}
@@ -126,8 +134,6 @@
   </p>
   {% comment %}
     post 2021 TODO:
-      - if admin of a clan, clan message should be editable
-      - anyone with a clan should see its message
       - players should be able to request being in a clan
   {% endcomment %}
 {% endif %}

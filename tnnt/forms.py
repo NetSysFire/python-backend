@@ -2,12 +2,12 @@ from django import forms
 import unicodedata
 
 # Helper function for common checks on unvalidated user input strings
-def text_field_clean(input_str, input_type):
+def text_field_clean(input_str, input_type, refuse_slashes=False):
     # refuse slashes, since this will mess up routing to /clan/<clanname>
     # endpoints
     # (post 2021 TODO: we could probably improve this by making the clan name
     # a GET parameter rather than part of the URL)
-    if '/' in input_str:
+    if refuse_slashes and '/' in input_str:
         raise forms.ValidationError('%s cannot contain slashes' % input_type)
 
     # allow diacritics, but only one combining character per regular character
@@ -45,7 +45,7 @@ class CreateClanForm(forms.Form):
     # don't want to allow in clan names.
     def clean_clan_name(self):
         data = self.cleaned_data['clan_name']
-        return text_field_clean(data, "Clan names")
+        return text_field_clean(data, "Clan names", True)
 
 class InviteMemberForm(forms.Form):
     invitee = forms.CharField(max_length = 32, label='Invite:')
@@ -53,3 +53,10 @@ class InviteMemberForm(forms.Form):
     def clean_invitee(self):
         data = self.cleaned_data['invitee']
         return text_field_clean(data, "Invitees")
+
+class SetMessageForm(forms.Form):
+    message = forms.CharField(max_length = 512, label='Update clan message:')
+
+    def clean_message(self):
+        data = self.cleaned_data['message']
+        return text_field_clean(data, 'Clan messages')
