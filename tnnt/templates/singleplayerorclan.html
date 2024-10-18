@@ -10,7 +10,6 @@
 <body>
 
 {% include "header.html" with page=header_key %}
-{# post 2021 TODO: it would be nice for most of these sections to have anchor links, but no pressing need for that #}
 
 {# === GENERAL INFORMATION & TROPHIES =================================== #}
 
@@ -29,11 +28,23 @@
     </tr>
   {% endif %}
   <tr>
-    <td>total games</td>
+    <td>
+      {% if player_or_clan.total_games > 0 %}
+        <a href="#recent-games">total games</a>
+      {% else %}
+        total games
+      {% endif %}
+    </td>
     <td class="num">{{ player_or_clan.total_games }}</td>
   </tr>
   <tr>
-    <td>games ascended</td>
+    <td>
+      {% if player_or_clan.wins > 0 %}
+        <a href="#ascensions">games ascended</a>
+      {% else %}
+        games ascended
+      {% endif %}
+    </td>
     <td class="num">{{ player_or_clan.wins }}</td>
   </tr>
   <tr>
@@ -49,15 +60,31 @@
     <td class="num">{{ player_or_clan.ratio }}</td>
   </tr>
   <tr>
+    <td>
+      {% if not isClan and player_or_clan.longest_streak > 0 %}
+        <a href="#streaks">longest streak</a>
+      {% else %}
+        longest streak
+      {% endif %}
+    </td>
+    <td class="num">{{ player_or_clan.longest_streak }}</td>
+  </tr>
+  <tr>
     <td>Z-score</td>
     <td class="num">{{ player_or_clan.zscore }}</td>
   </tr>
   <tr>
-    <td>distinct achievements</td>
+    <td><a href="#achievements">distinct achievements</a></td>
     <td class="num">{{ player_or_clan.unique_achievements }}</td>
   </tr>
   <tr>
-    <td>unique deaths</td>
+    <td>
+      {% if uniquedeaths|length > 0 %}
+        <a href="#uniqdeaths">unique deaths</a>
+      {% else %}
+        unique deaths
+      {% endif %}
+    </td>
     <td class="num">{{ player_or_clan.unique_deaths }}</td>
   </tr>
   <tr>
@@ -76,7 +103,12 @@
     {% for tr in player_or_clan.trophies.all %}
       <tr>
         <td>{{ tr.name }}</td>
-        {# post 2021 TODO: show when a trophy was attained (stretch goal) #}
+        {% comment %}
+          post 2021 TODO: show when a trophy was attained.
+          This would require changing the simple ManyToManyFields between
+          Player/Clan and Trophy into full tables in order to record the extra
+          metadata of when it was earned.
+        {% endcomment %}
       </tr>
     {% endfor %}
   </tbody>
@@ -109,21 +141,26 @@
 {% if player_or_clan.total_games > 0 %}
 
   {% if player_or_clan.wins > 0 %}
-    <h2>ASCENSIONS</h2>
+    <h2 id="ascensions">ASCENSIONS</h2>
     {% include "games_table.html" with games=ascensions ascview=True %}
   {% endif %} {# wins > 0 #}
 
-  <h2>RECENT GAMES</h2>
+  <h2 id="recent-games">RECENT GAMES</h2>
   {% include "games_table.html" with games=recentgames ascview=False %}
 
 {% endif %} {# games > 0 #}
 
 {# == STREAKS =========================================================== #}
 
-{# post 2021 TODO: Currently only shown on Player view, streak computation for Clans' players is not shown #}
+{% comment %}
+post 2021 TODO: Currently only shown on Player view, streak computation for
+Clans' players is not shown.
+If we do show all streaks in a clan at some point, also make sure to remove the
+"not isClan" condition from the anchor link at the top.
+{% endcomment %}
 {% if not isClan %}
   {% if player_or_clan.longest_streak > 0 %}
-    <h2>STREAKS</h2>
+    <h2 id="streaks">STREAKS</h2>
     <table>
       <thead>
         <tr class="framed">
@@ -166,7 +203,7 @@
 
 {# == ACHIEVEMENTS ====================================================== #}
 
-<h2>Achievements</h2>
+<h2 id="achievements">Achievements</h2>
 <div class="achieve-top">
   <p id="ach-hide">[hide table]</p>
   <table id="achievements-table">
@@ -210,7 +247,7 @@
 
 {% if uniquedeaths|length > 0 %}
   {# post 2021 TODO: show time of achievement and possibly dumplog; for clans, show player #}
-  <h2>Unique Deaths</h2>
+  <h2 id="uniqdeaths">Unique Deaths</h2>
   <table>
     <thead>
       <tr class="framed">
