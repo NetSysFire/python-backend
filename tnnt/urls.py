@@ -1,5 +1,4 @@
 from django.urls import include, path
-from scoreboard import views
 from tnnt import views as tnntviews
 
 # Wire up our API using automatic URL routing.
