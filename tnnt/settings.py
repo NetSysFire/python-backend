@@ -29,12 +29,13 @@ DEBUG = False
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['tnnt.org','www.tnnt.org']
-
+if DEBUG:
+    ALLOWED_HOSTS.append('localhost')
+    ALLOWED_HOSTS.append('127.0.0.1')
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic', #Disable Djangos static file server when DEBUG = True
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +46,10 @@ INSTALLED_APPS = [
     'scoreboard.apps.ScoreboardConfig',
     'tnnt',
 ]
+if not DEBUG:
+    # When DEBUG = True, Django serves local static files.
+    # In prod, we use whitenoise to serve the files.
+    INSTALLED_APPS.append('whitenoise.runserver_nostatic')
 
 REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': [
@@ -59,7 +64,6 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,6 +71,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+if not DEBUG:
+    MIDDLEWARE.append('whitenoise.middleware.WhiteNoiseMiddleware')
 
 # Required when using Django version 4.x
 # CSRF_TRUSTED_ORIGINS = []
@@ -150,11 +156,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [ # why is this needed?
-        'tnnt/static',
-]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -179,8 +182,9 @@ AUTHENTICATION_BACKENDS = [
 
 # Path to dgl sqlite3 database
 
-# DGL_DATABASE_PATH = './dgamelaunch_test.db'
 DGL_DATABASE_PATH = '/opt/nethack/chroot/dgldir/dgamelaunch.db'
+if DEBUG:
+    DGL_DATABASE_PATH = './dgamelaunch_test.db'
 
 # Path to where TNNT is writing temp achievement files
 # If you don't want to show temp achievements, leave this uncommented
