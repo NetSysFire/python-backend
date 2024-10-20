@@ -184,8 +184,15 @@ class LeaderboardsView(TemplateView):
             list_out = []
             # Note: this sorting will put players with the same amount of wins
             # (or whatever metric stat is) in arbitrary order.
-            # post 2021 TODO: a good enhancement would be to order it by the
-            # first player to get there
+            # The obvious enhancement is to order it by the first player to get
+            # there, but that's only straightforward for leaderboard stats that
+            # refer directly to a single game (and which don't tend to tie).
+            # Other leaderboard stats such as "number of unique achievements" or
+            # "donations"? Hard to track.
+            # This is not to say it's impossible -- e.g. you could add a
+            # "donations_updated" field that gets set to the time the
+            # aggregation was run whenever someone's donation count goes up --
+            # but it's unclear that anyone actually wants this right now.
             for elem in sorted(base_list, key=lambda E: E[stat], reverse=descending):
                 if not stat in elem or elem[stat] is None:
                     # could indicate a field was not correctly populated during
