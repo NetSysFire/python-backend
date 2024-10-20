@@ -15,6 +15,7 @@ urlpatterns = [
     path('achievements', tnntviews.AchievementsView.as_view(), name='achievements'),
     path('uniquedeaths', tnntviews.UniqueDeathsView.as_view(), name='uniquedeaths'),
     path('rules', tnntviews.RulesView.as_view(), name='rules'),
+    path('stats', tnntviews.StatsView.as_view(), name='stats'),
     path('about', tnntviews.AboutView.as_view(), name='about'),
     path('archives', tnntviews.ArchivesView.as_view(), name='archives'),
     path('clanmgmt', tnntviews.ClanMgmtView.as_view(), name='clanmgmt'),

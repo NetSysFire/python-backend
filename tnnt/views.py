@@ -439,6 +439,33 @@ class UniqueDeathsView(TemplateView):
         kwargs['deathlist'] = uniqdeaths.get_unique_death_details()
         return kwargs
 
+class StatsView(TemplateView):
+    template_name = 'stats.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['numclans'] = Clan.objects.count()
+        kwargs['numplayers'] = Player.objects.count()
+        kwargs['numgames'] = Game.objects.count()
+        aggr = Player.objects.aggregate(
+                    Sum('games_scummed'),
+                    Sum('wins'),
+                    Sum('splats'),
+                    Sum('unique_achievements'),
+                    Sum('donations'))
+        kwargs['numscums'] = aggr['games_scummed__sum']
+        kwargs['numascs'] = aggr['wins__sum']
+        kwargs['numsplats'] = aggr['splats__sum']
+        kwargs['numminessoko'] = Game.objects.filter(mines_soko=True).count()
+        kwargs['numascenders'] = Player.objects.filter(wins__gt=0).count()
+        kwargs['totachieve'] = aggr['unique_achievements__sum']
+        kwargs['totdonations'] = aggr['donations__sum']
+        aggr2 = Game.objects.aggregate(Sum('realtime'),
+                                       Sum('turns'))
+        kwargs['totturns'] = aggr2['turns__sum']
+        kwargs['tottime'] = aggr2['realtime__sum']
+        kwargs['totuniqdeaths'] = len(uniqdeaths.compile_unique_deaths(Game.objects.all()))
+        return kwargs
+
 class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
