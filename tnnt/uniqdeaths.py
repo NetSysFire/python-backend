@@ -52,8 +52,8 @@ def get_unique_death_details():
     deathdetails = Game.objects.values('death').annotate(
         time=Subquery(subq.values('earliest')),
         earliest_plr=Subquery(subq.order_by('earliest').values('player__name')[:1]),
-        nclans = Count('player__clan__name'),
-        nplayers = Count('player__name')
+        nclans = Count('player__clan__name', distinct=True),
+        nplayers = Count('player__name', distinct=True)
     ).order_by('death', 'time')
 
     # Have to iterate over it here, because different raw deaths might normalize
