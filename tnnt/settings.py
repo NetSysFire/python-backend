@@ -276,4 +276,6 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     # (to prevent farming a bunch of unique deaths off repeated prayers until
     # the god summons a minion)
     (r"an? (\w+ elemental|Aleax|couatl|Angel|\w+ demon|\w+ devil|(suc|in)cubus|balrog|pit fiend|nalfeshnee|hezrou|vrock|marilith|erinyes) of .+", "minion of a deity"),
+    # currently "chameleon imitating a foo" IS treated as a separate death from
+    # "foo". Should it be normalized down to the same thing?
 ]

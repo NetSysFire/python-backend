@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Unique Deaths</title>
+  {% include "headlinks.html" %}
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<h2>Unique Deaths</h2>
+<table id="achievements-table">
+  <thead>
+    {# FUTURE TODO: Allow this table to be sorted. #}
+    <tr class="framed">
+      <th>death</th>
+      <th>first obtained on</th>
+      <th>by player</th>
+      <th>players</th>
+      <th>clans?</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in deathlist %}
+      <tr>
+        <td>{{ entry.death }}</td>
+        {% comment %}
+          Leave the year off here, since TNNT never spans multiple years.
+          Strictly speaking, we could also leave the month off, since TNNT also
+          does not span multiple months, but there's no obvious way to display
+          that to the reader that doesn't look weird.
+        {% endcomment %}
+        <td>{{ entry.time | date:"M d, H:i:s" }}</td>
+        <td>{{ entry.earliest_plr }}</td>
+        <td>{{ entry.nplayers }}</td>
+        <td>{{ entry.nclans }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+
+</html>

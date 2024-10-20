@@ -362,7 +362,9 @@ class SinglePlayerOrClanView(TemplateView):
         kwargs['recentgames'] = \
             bulk_upd_games(list(base_game_qs[:10].values()), False)
 
-        # post 2021 TODO: this currently only gets the deaths, no other details
+        # this only gets the deaths, no other details; we have the ability to
+        # get extra details now, but currently there isn't any demand to show
+        # additional details in this view.
         kwargs['uniquedeaths'] = sorted(list(uniqdeaths.compile_unique_deaths(base_game_qs)))
 
         # a little subquerying for achievements...
@@ -427,6 +429,14 @@ class AchievementsView(TemplateView):
                       nclans=Count('game__player__clan', distinct=True)) \
             .order_by('-nplayers', '-nclans', 'id') \
             .values()
+        return kwargs
+
+class UniqueDeathsView(TemplateView):
+    template_name = 'uniquedeaths.html'
+
+    def get_context_data(self, **kwargs):
+        # kwargs['deathlist'] = [ { 'death': 'killed by a jackal', 'player': 'Furey', 'time': 293842, 'nplayers': 20, 'nclans': 3 } ]
+        kwargs['deathlist'] = uniqdeaths.get_unique_death_details()
         return kwargs
 
 class ClanMgmtView(View):
