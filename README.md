@@ -97,6 +97,13 @@ $ ./ach_to_yaml.sh /path/to/tnnt/source > scoreboard/fixtures/achievements.yaml
 $ python manage.py loaddata achievements conducts sources trophies
 ```
 
+#### Serving up static content in production mode
+Note: in tnnt/settings.py, when DEBUG = False (production mode), run this command
+to properly stage static content.
+```shell
+$ ./manage.py collectstatic
+```
+
 ### Running and operation
 The pollxlogs command will read xlog data from a list of sources with associated URLs,
 saved in the DB. Those sources were defined as fixtures and imported with the above
