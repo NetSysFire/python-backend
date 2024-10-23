@@ -22,8 +22,9 @@
   <tbody>
     {% for trophyname, trophydata in trophies.items %}
       <tr>
-        <td class="trophy-name" title="{{ trophydata.description }}">
-          {{ trophyname }}
+        <td class="trophy-name">
+          <span class="real-trophy-name">{{ trophyname }}</span>
+          <p>{{trophydata.description}}</p>
         </td>
         <td class="trophy-multi">
           {% for plrname in trophydata.players %}

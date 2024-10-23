@@ -309,12 +309,16 @@ table.trophies td {
   vertical-align: top;
 }
 
-td.trophy-name {
+td.trophy-name span.real-trophy-name {
   font-size: 166%;
   text-transform: uppercase;
   padding-right: 2em;
   font-weight: 300;
   width: 30%;
+}
+
+td.trophy-name p {
+    margin: 0;
 }
 
 td.trophy-multi {

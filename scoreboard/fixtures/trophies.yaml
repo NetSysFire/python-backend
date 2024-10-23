@@ -21,43 +21,43 @@
 - model: scoreboard.trophy
   fields:
     name: Great Archeologist
-    description: Ascend all 4 race/alignment combos for Archeologist
+    description: Ascend all 4 starting race/alignment combos for Archeologist
 - model: scoreboard.trophy
   fields:
     name: Great Barbarian
-    description: Ascend all 3 race/alignment combos for Barbarian
+    description: Ascend all 3 starting race/alignment combos for Barbarian
 - model: scoreboard.trophy
   fields:
     name: Great Caveperson
-    description: Ascend all 4 race/alignment combos for Caveperson
+    description: Ascend all 4 starting race/alignment combos for Caveperson
 - model: scoreboard.trophy
   fields:
     name: Great Healer
-    description: Ascend all 2 race/alignment combos for Healer
+    description: Ascend all 2 starting race/alignment combos for Healer
 - model: scoreboard.trophy
   fields:
     name: Great Monk
-    description: Ascend all 3 alignments for Monk
+    description: Ascend all 3 starting alignments for Monk
 - model: scoreboard.trophy
   fields:
     name: Great Priest
-    description: Ascend all 4 race/alignment combos for Priest
+    description: Ascend all 4 starting race/alignment combos for Priest
 - model: scoreboard.trophy
   fields:
     name: Great Ranger
-    description: Ascend all 5 race/alignment combos for Ranger
+    description: Ascend all 5 starting race/alignment combos for Ranger
 - model: scoreboard.trophy
   fields:
     name: Great Rogue
-    description: Ascend all 2 race/alignment combos for Rogue
+    description: Ascend all 2 starting race/alignment combos for Rogue
 - model: scoreboard.trophy
   fields:
     name: Great Valkyrie
-    description: Ascend all 3 race/alignment combos for Valkyrie
+    description: Ascend all 3 starting race/alignment combos for Valkyrie
 - model: scoreboard.trophy
   fields:
     name: Great Wizard
-    description: Ascend all 5 race/alignment combos for Wizard
+    description: Ascend all 5 starting race/alignment combos for Wizard
 - model: scoreboard.trophy
   fields:
     name: Lesser Dwarf
@@ -81,43 +81,43 @@
 - model: scoreboard.trophy
   fields:
     name: Lesser Archeologist
-    description: Complete Mines and Soko with all 4 race/alignment combos for Archeologist
+    description: Complete Mines and Soko with all 4 starting race/alignment combos for Archeologist
 - model: scoreboard.trophy
   fields:
     name: Lesser Barbarian
-    description: Complete Mines and Soko with all 3 race/alignment combos for Barbarian
+    description: Complete Mines and Soko with all 3 starting race/alignment combos for Barbarian
 - model: scoreboard.trophy
   fields:
     name: Lesser Caveperson
-    description: Complete Mines and Soko with all 4 race/alignment combos for Caveperson
+    description: Complete Mines and Soko with all 4 starting race/alignment combos for Caveperson
 - model: scoreboard.trophy
   fields:
     name: Lesser Healer
-    description: Complete Mines and Soko with all 2 race/alignment combos for Healer
+    description: Complete Mines and Soko with all 2 starting race/alignment combos for Healer
 - model: scoreboard.trophy
   fields:
     name: Lesser Monk
-    description: Complete Mines and Soko with all 3 alignments for Monk
+    description: Complete Mines and Soko with all 3 starting alignments for Monk
 - model: scoreboard.trophy
   fields:
     name: Lesser Priest
-    description: Complete Mines and Soko with all 4 race/alignment combos for Priest
+    description: Complete Mines and Soko with all 4 starting race/alignment combos for Priest
 - model: scoreboard.trophy
   fields:
     name: Lesser Ranger
-    description: Complete Mines and Soko with all 5 race/alignment combos for Ranger
+    description: Complete Mines and Soko with all 5 starting race/alignment combos for Ranger
 - model: scoreboard.trophy
   fields:
     name: Lesser Rogue
-    description: Complete Mines and Soko with all 2 race/alignment combos for Rogue
+    description: Complete Mines and Soko with all 2 starting race/alignment combos for Rogue
 - model: scoreboard.trophy
   fields:
     name: Lesser Valkyrie
-    description: Complete Mines and Soko with all 3 race/alignment combos for Valkyrie
+    description: Complete Mines and Soko with all 3 starting race/alignment combos for Valkyrie
 - model: scoreboard.trophy
   fields:
     name: Lesser Wizard
-    description: Complete Mines and Soko with all 5 race/alignment combos for Wizard
+    description: Complete Mines and Soko with all 5 starting race/alignment combos for Wizard
 - model: scoreboard.trophy
   fields:
     name: Both Genders
