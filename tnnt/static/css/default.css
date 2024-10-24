@@ -354,7 +354,7 @@ header {
   margin:0 auto 1em auto;
 }
 
-#shirts_notification {
+#announcement-banner {
   background-color: #eb0;
   width: 100%;
   padding: 0.7em;
@@ -364,7 +364,7 @@ header {
   color: #181818;
 }
 
-#shirts_notification a:hover {
+#announcement-banner a:hover {
   color:#f2f5ff;
 }
 
