@@ -93,11 +93,8 @@ class HomepageView(TemplateView):
 
         return kwargs
 
-class RulesView(TemplateView):
-    template_name = 'rules.html'
-
-class AboutView(TemplateView):
-    template_name = 'about.html'
+class FaqView(TemplateView):
+    template_name = 'faq.html'
 
 class ArchivesView(TemplateView):
     template_name = 'archives.html'

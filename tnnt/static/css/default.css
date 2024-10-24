@@ -606,4 +606,12 @@ div.row.leaderboard table {
   color: #fd0;
 }
 
+/*====================================================================
+  === FAQ PAGE ----===================================================
+  ====================================================================*/
+
+ul#faq-list li a {
+    text-decoration: none;
+}
+
 /* TODO: Inspect this css file for rules that are no longer in use. */
