@@ -7,6 +7,10 @@
   <title>TNNT::Leaderboards</title>
   {% include "headlinks.html" %}
   <script type="text/javascript" src="{% static 'js/leaderboard-select.js' %}"></script>
+  <noscript>
+    {# If JS is unavailable, hide the leaderboard selector. #}
+    <style> #leaderboard-select { display: none; } </style>
+  </noscript>
 </head>
 
 <body>
@@ -29,6 +33,15 @@
 <hr>
 
 {% for board in leaderboards %}
+  <noscript>
+    {% comment %}
+      If there is no JS, the page will load with all leaderboards unhidden,
+      which is what we want. But it will be hard to tell which is which, so
+      stick in headers for each one. With JS available, the title is not needed
+      because the leaderboard selector holds the title.
+    {% endcomment %}
+    <h2>{{ board.title }}</h2>
+  </noscript>
   {% include "2boards.html" %}
 {% endfor %}
 
