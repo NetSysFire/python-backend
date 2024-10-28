@@ -2,7 +2,8 @@ from rest_framework.parsers import BaseParser
 
 dec_fields = ['points', 'turns', 'realtime', 'maxlvl', 'starttime', 'endtime']
 hex_fields = [
-    'flags', 'achieve', 'conduct', 'tnntachieve0', 'tnntachieve1', 'tnntachieve2', 'tnntachieve3', 'tnntachieve4'
+    'flags', 'achieve', 'conduct', 'tnntachieve0', 'tnntachieve1', 'tnntachieve2',
+    'tnntachieve3', 'tnntachieve4', 'tnntachieve5'
 ]
 
 
