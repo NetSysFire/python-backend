@@ -196,12 +196,12 @@ MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
 
-CLAN_FREEZE_TIME = datetime.fromisoformat('2023-11-10T00:00:00+00:00')
+CLAN_FREEZE_TIME = datetime.fromisoformat('2024-11-10T00:00:00+00:00')
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2023-11-01T00:00:00+00:00')
-TOURNAMENT_END   = datetime.fromisoformat('2023-12-01T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2024-11-01T00:00:00+00:00')
+TOURNAMENT_END   = datetime.fromisoformat('2024-12-01T00:00:00+00:00')
 
 # Main log file
 
